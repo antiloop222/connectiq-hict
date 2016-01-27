@@ -1,0 +1,20 @@
+<strings>
+	<string id="AppName">7-min</string>
+
+	<string id="press_start">Press start</string>
+	<string id="rest">Rest</string>
+	<string id="next">Next</string>
+
+	<string id="exercise1">Jumping jacks</string>
+	<string id="exercise2">Wall sit</string>
+	<string id="exercise3">Push-up</string>
+	<string id="exercise4">Abdominal crunch</string>
+	<string id="exercise5">Step-up (chair)</string>
+	<string id="exercise6">Squat</string>
+	<string id="exercise7">Triceps dip (chair)</string>
+	<string id="exercise8">Plank</string>
+	<string id="exercise9">High-knees running</string>
+	<string id="exercise10">Lunge</string>
+	<string id="exercise11">Push-up rotation</string>
+	<string id="exercise12">Side plank</string>
+</strings>

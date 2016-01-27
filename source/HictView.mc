@@ -61,7 +61,7 @@ class HictView extends Ui.View {
 
 		// Start activity recording
 		if (Toybox has :ActivityRecording) {
-			var sessionName = Ui.loadResource(Rez.Strings.AppName);
+			var sessionName = Ui.loadResource(Rez.Strings.AppDescription);
 			session = Recording.createSession({
 				:name => sessionName,
 				:sport => Recording.SPORT_TRAINING,

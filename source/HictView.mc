@@ -5,9 +5,9 @@ using Toybox.WatchUi as Ui;
 //! Main view for application
 class HictView extends Ui.View {
 
-    function initialize() {
-        View.initialize();
-    }
+	function initialize() {
+		View.initialize();
+	}
 
 	//! Load your resources here
 	function onLayout(dc) {
@@ -21,11 +21,11 @@ class HictView extends Ui.View {
 		Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
 		Sensor.setEnabledSensors([Sensor.SENSOR_TEMPERATURE]);
 		Sensor.enableSensorEvents(method(:sensorAction));
-    }
+	}
 
-    //! Update the view
-    function onUpdate(dc) {
-    	var view;
+	//! Update the view
+	function onUpdate(dc) {
+		var view;
 
 		// Draw the main text
 		view = View.findDrawableById(TextLabel);
@@ -39,15 +39,15 @@ class HictView extends Ui.View {
 		view = View.findDrawableById(NextLabel);
 		drawNextExerciseLabel(view);
 
-        // Call the parent onUpdate function to redraw the layout
-        View.onUpdate(dc);
-    }
+		// Call the parent onUpdate function to redraw the layout
+		View.onUpdate(dc);
+	}
 
-    //! Called when this View is removed from the screen. Save the
-    //! state of this View here. This includes freeing resources from
-    //! memory.
-    function onHide() {
-    }
+	//! Called when this View is removed from the screen. Save the
+	//! state of this View here. This includes freeing resources from
+	//! memory.
+	function onHide() {
+	}
 
 	//! Returns true if the activity is running, false otherwise.
 	function isRunning() {
@@ -57,10 +57,13 @@ class HictView extends Ui.View {
 	//! Start the activity
 	function startActivity() {
 
+		Log.debug("Starting activity");
+
 		// Start activity recording
 		if (Toybox has :ActivityRecording) {
+			var sessionName = Ui.loadResource(Rez.Strings.AppName);
 			session = Recording.createSession({
-				:name => Ui.loadResource(Rez.Strings.AppName),
+				:name => sessionName,
 				:sport => Recording.SPORT_TRAINING,
 				:subSport => Recording.SUB_SPORT_EXERCISE
 			});
@@ -83,6 +86,8 @@ class HictView extends Ui.View {
 
 	//! Stop the activity
 	function stopActivity() {
+
+		Log.debug("Stopping activity");
 
 		// Stop timer
 		timer.stop();
@@ -119,6 +124,9 @@ class HictView extends Ui.View {
 					exerciseCount++;
 					periodTime = 0;
 					resting = false;
+					if (session != null && session.isRecording()) {
+						session.addLap();
+					}
 					notify();
 				}
 			} else {
@@ -134,15 +142,15 @@ class HictView extends Ui.View {
 					}
 				}
 			}
-    	}
+		}
 
 		// Update view
 		Ui.requestUpdate();
-    }
+	}
 
 	//! Action on sensor event: save heart rate and temperature for display
-    function sensorAction(info) {
-    	if (info != null) {
+	function sensorAction(info) {
+		if (info != null) {
 			// Heart rate sensor info
 			heartRate = (info.heartRate == null) ? 0 : info.heartRate;
 
@@ -152,7 +160,7 @@ class HictView extends Ui.View {
 			// Update view
 			Ui.requestUpdate();
 		}
-    }
+	}
 
 	hidden function notify() {
 		Attention.vibrate([
@@ -173,7 +181,7 @@ class HictView extends Ui.View {
 			if (resting) {
 				view.setText(exerciseCount < 12 ? (Ui.loadResource(Rez.Strings.next) + ": " + EXERCISES[exerciseCount]) : "");
 			} else {
-				view.setText(Ui.loadResource(Rez.Strings.rest));
+				view.setText(Ui.loadResource(Rez.Strings.next) + ": " + Ui.loadResource(Rez.Strings.rest));
 			}
 		} else {
 			view.setText("");
@@ -237,7 +245,7 @@ class HictView extends Ui.View {
 	// Exercise number now playing (1 to 12)
 	hidden var exerciseCount = 0;
 	// Max number of exercises
-	hidden var maxExerciseCount = 5;
+	hidden var maxExerciseCount = 12;
 
 	// Heart rate value, if available
 	hidden var heartRate = 0;
@@ -246,10 +254,10 @@ class HictView extends Ui.View {
 
 	// Exercise delay (30s)
 	// TODO: should be configurable
-	hidden var exerciseDelay = 5;
+	hidden var exerciseDelay = 30;
 	// Pause delay (10s)
 	// TODO: should be configurable
-	hidden var restDelay = 2;
+	hidden var restDelay = 10;
 
 	hidden const TextLabel = "TextLabel";
 	hidden const NextLabel = "NextLabel";

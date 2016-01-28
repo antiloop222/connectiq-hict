@@ -9,13 +9,15 @@ class HictBehaviorDelegate extends Ui.BehaviorDelegate {
 
 	//! Back button pressed
 	function onBack() {
-		// Do not quit if activity running
+		// Do not quit if activity is running
 		return (view != null) && view.isRunning();
 	}
 
 	//! Key pressed
 	function onKey(key) {
 		if (key.getKey() == Ui.KEY_ENTER) {
+			Log.debug("Key pressed: ENTER");
+
 			if (view.isRunning()) {
 				// Stop activity
 				view.stopActivity();

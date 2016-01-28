@@ -61,19 +61,21 @@ class HictView extends Ui.View {
 
 		// Start activity recording
 		if (Toybox has :ActivityRecording) {
+			Log.debug("Activity recording is supported");
 			var sessionName = Ui.loadResource(Rez.Strings.AppDescription);
 			session = Recording.createSession({
 				:name => sessionName,
 				:sport => Recording.SPORT_TRAINING,
 				:subSport => Recording.SUB_SPORT_EXERCISE
 			});
+
+			Log.debug("Starting session recording");
 			session.start();
 		}
 
 		// Initialize counters
 		running = true;
 		resting = true;
-		activityTime = 0;
 		exerciseCount = 0;
 
 		// Start timer
@@ -94,11 +96,15 @@ class HictView extends Ui.View {
 
 		// Stop activity recording
 		if (session != null && session.isRecording()) {
+			Log.debug("Stopping session recording");
 			session.stop();
-			if (activityTime < 180) {
-				// Ignore sessions < 3 minutes
+
+			if (exerciseCount < (maxExerciseCount / 2)) {
+				// Ignore sessions < 6 exercises
+				Log.debug("Discarding workout session with only " + exerciseCount + " exercises");
 				session.discard();
 			} else {
+				Log.debug("Saving workout session");
 				session.save();
 			}
 		}
@@ -106,7 +112,6 @@ class HictView extends Ui.View {
 		// Reset counters
 		running = false;
 		resting = true;
-		activityTime = 0;
 		exerciseCount = 0;
 
 		// Update view
@@ -115,16 +120,18 @@ class HictView extends Ui.View {
 
 	function timerAction() {
 		if (running) {
-			activityTime++;
+			// Increment time counter for the period
 			periodTime++;
 
 			if (resting) {
 				if (periodTime > restDelay) {
 					// Next exercise
+					Log.debug("Next exercise");
 					exerciseCount++;
 					periodTime = 0;
 					resting = false;
-					if (session != null && session.isRecording()) {
+					if (session != null && session.isRecording() && exerciseCount > 1) {
+						Log.debug("Adding lap to session");
 						session.addLap();
 					}
 					notify();
@@ -132,12 +139,14 @@ class HictView extends Ui.View {
 			} else {
 				if (periodTime > exerciseDelay) {
 					// Switch to rest
+					Log.debug("Rest period");
 					periodTime = 0;
 					resting = true;
 					notify();
 
 					// Stop after 12 exercises
 					if (exerciseCount >= maxExerciseCount) {
+						Log.debug("Reached max exercise count");
 						stopActivity();
 					}
 				}
@@ -238,9 +247,7 @@ class HictView extends Ui.View {
 	// Activity timer
 	hidden var timer = null;
 
-	// Total time for activity
-	hidden var activityTime = 0;
-	// Time for current exercise/pause preriod
+	// Time for current exercise/pause period
 	hidden var periodTime = 0;
 	// Exercise number now playing (1 to 12)
 	hidden var exerciseCount = 0;
@@ -254,10 +261,10 @@ class HictView extends Ui.View {
 
 	// Exercise delay (30s)
 	// TODO: should be configurable
-	hidden var exerciseDelay = 30;
+	hidden var exerciseDelay = 10;
 	// Pause delay (10s)
 	// TODO: should be configurable
-	hidden var restDelay = 10;
+	hidden var restDelay = 5;
 
 	hidden const TextLabel = "TextLabel";
 	hidden const NextLabel = "NextLabel";

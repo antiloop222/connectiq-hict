@@ -105,7 +105,7 @@ class HictView extends Ui.View {
 		timer.stop();
 
 		// Stop activity recording
-		if (session != null && session.isRecording()) {
+		if (session != null) {
 			Log.debug("Stopping session recording");
 			session.stop();
 
@@ -131,6 +131,7 @@ class HictView extends Ui.View {
 		Ui.requestUpdate();
 	}
 
+	//! Action on timer event: switch to/from workout/rest
 	function timerAction() {
 		if (running) {
 			// Increment time counter for the period
@@ -237,7 +238,7 @@ class HictView extends Ui.View {
 
 	hidden function drawTimerLabel(view) {
 		if (running) {
-			var t = (resting ? restDelay : exerciseDelay) - periodTime;
+			var t = (resting ? restDelay : exerciseDelay) - periodTime - 1;
 			view.setText(to2digitFormat(t));
 		} else {
 			view.setText("--");
@@ -299,10 +300,10 @@ class HictView extends Ui.View {
 
 	// Exercise delay (30s)
 	// TODO: should be configurable
-	hidden var exerciseDelay = 10;
+	hidden var exerciseDelay = 30;
 	// Pause delay (10s)
 	// TODO: should be configurable
-	hidden var restDelay = 5;
+	hidden var restDelay = 10;
 
 	hidden const TextLabel = "TextLabel";
 	hidden const NextLabel = "NextLabel";

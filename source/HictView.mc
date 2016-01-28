@@ -212,6 +212,17 @@ class HictView extends Ui.View {
 		]);
 	}
 
+	//! Load preferences for the view from the object store.
+	//! This can be called from the app when the settings have changed.
+	function loadPreferences() {
+		exerciseDelay = Prefs.getNumber("exerTime", 30, 15, 9999);
+		Log.debug("Preference: exercise time: " + exerciseDelay);
+
+		restDelay = Prefs.getNumber("restTime", 10, 10, 9999);
+		Log.debug("Preference: rest time: " + restDelay);
+	}
+
+
 	hidden function drawMainTextLabel(view) {
 		if (running) {
 			if (resting) {
@@ -298,11 +309,9 @@ class HictView extends Ui.View {
 	// Temperature value, if available
 	hidden var temperature = 0;
 
-	// Exercise delay (30s)
-	// TODO: should be configurable
+	// Exercise delay
 	hidden var exerciseDelay = 30;
-	// Pause delay (10s)
-	// TODO: should be configurable
+	// Pause delay
 	hidden var restDelay = 10;
 
 	hidden const TextLabel = "TextLabel";

@@ -2,6 +2,14 @@
 	<string id="AppName">7-min</string>
 	<string id="AppDescription">7 Minutes d'exercices</string>
 
+	<string id="AppVersionLabel">Version</string>
+	<string id="ExerciseTimeLabel">Durée des exercices (s)</string>
+	<string id="ExerciseTimePrompt">Entrer la durée des exercices, en secondes</string>
+	<string id="ExerciseTimeError">La durée des exercices ne peut pas être inférieure à 15 secondes</string>
+	<string id="RestTimeLabel">Durée du repos (s)</string>
+	<string id="RestTimePrompt">Entrer la durée de la période de repos, en secondes</string>
+	<string id="RestTimeError">La durée du repos ne peut pas être inférieure à 10 secondes</string>
+
 	<string id="press_start">Appuyez sur Start</string>
 	<string id="get_ready">Préparez-vous</string>
 	<string id="rest">Repos</string>

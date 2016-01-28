@@ -1,6 +1,15 @@
 <strings>
 	<string id="AppName">7-min</string>
+	<string id="AppVersion">0.1</string>
 	<string id="AppDescription">7-Minute Workout</string>
+
+	<string id="AppVersionLabel">Version</string>
+	<string id="ExerciseTimeLabel">Exercise duration (s)</string>
+	<string id="ExerciseTimePrompt">Enter duration for exercise, in seconds</string>
+	<string id="ExerciseTimeError">Exercise duration cannot be less than 15 seconds</string>
+	<string id="RestTimeLabel">Rest duration (s)</string>
+	<string id="RestTimePrompt">Enter duration of rest, period in seconds</string>
+	<string id="RestTimeError">Rest duration cannot be less than 10 seconds</string>
 
 	<string id="press_start">Press start</string>
 	<string id="get_ready">Get ready</string>

@@ -9,9 +9,9 @@ module Log {
 		if (DEBUG) {
 			var clock = Sys.getClockTime();
 			var msg = Lang.format("$1$:$2$:$3$ - [DEBUG] - $4$", [
-				clock.hour.format("%2d"),
-				clock.min.format("%2d"),
-				clock.sec.format("%2d"),
+				clock.hour.format("%.2d"),
+				clock.min.format("%.2d"),
+				clock.sec.format("%.2d"),
 				text
 			]);
 			Sys.println(msg);

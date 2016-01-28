@@ -54,6 +54,16 @@ class HictView extends Ui.View {
 		return running;
 	}
 
+	//! Returns true if the activity is running and it is a work period, false otherwise.
+	function isWorking() {
+		return running && !resting;
+	}
+
+	//! Returns true if the activity is running and it is a rest period, false otherwise.
+	function isResting() {
+		return running && resting;
+	}
+
 	//! Start the activity
 	function startActivity() {
 
@@ -64,9 +74,9 @@ class HictView extends Ui.View {
 			Log.debug("Activity recording is supported");
 			var sessionName = Ui.loadResource(Rez.Strings.AppDescription);
 			session = Recording.createSession({
-				:name => sessionName,
-				:sport => Recording.SPORT_TRAINING,
-				:subSport => Recording.SUB_SPORT_EXERCISE
+				:sport=>Recording.SPORT_TRAINING,
+				:subSport=>Recording.SUB_SPORT_EXERCISE,
+				:name=>sessionName
 			});
 
 			Log.debug("Starting session recording");
@@ -107,11 +117,14 @@ class HictView extends Ui.View {
 				Log.debug("Saving workout session");
 				session.save();
 			}
+
+			// Clean session
+			session = null;
 		}
 
 		// Reset counters
 		running = false;
-		resting = true;
+		resting = false;
 		exerciseCount = 0;
 
 		// Update view
@@ -126,7 +139,6 @@ class HictView extends Ui.View {
 			if (resting) {
 				if (periodTime > restDelay) {
 					// Next exercise
-					Log.debug("Next exercise");
 					exerciseCount++;
 					periodTime = 0;
 					resting = false;
@@ -134,14 +146,15 @@ class HictView extends Ui.View {
 						Log.debug("Adding lap to session");
 						session.addLap();
 					}
+					Log.debug("New exercise: " + EXERCISES[exerciseCount-1]);
 					notify();
 				}
 			} else {
 				if (periodTime > exerciseDelay) {
 					// Switch to rest
-					Log.debug("Rest period");
 					periodTime = 0;
 					resting = true;
+					Log.debug("Rest period");
 					notify();
 
 					// Stop after 12 exercises
@@ -188,9 +201,9 @@ class HictView extends Ui.View {
 	hidden function drawNextExerciseLabel(view) {
 		if (running) {
 			if (resting) {
-				view.setText(exerciseCount < 12 ? (Ui.loadResource(Rez.Strings.next) + ": " + EXERCISES[exerciseCount]) : "");
+				view.setText(exerciseCount < 12 ? (Ui.loadResource(Rez.Strings.next) + " " + EXERCISES[exerciseCount]) : "");
 			} else {
-				view.setText(Ui.loadResource(Rez.Strings.next) + ": " + Ui.loadResource(Rez.Strings.rest));
+				view.setText(Ui.loadResource(Rez.Strings.next) + " " + Ui.loadResource(Rez.Strings.rest));
 			}
 		} else {
 			view.setText("");
@@ -202,7 +215,7 @@ class HictView extends Ui.View {
 			var t = (resting ? restDelay : exerciseDelay) - periodTime;
 			view.setText(to2digitFormat(t));
 		} else {
-			view.setText("00");
+			view.setText("--");
 		}
 	}
 

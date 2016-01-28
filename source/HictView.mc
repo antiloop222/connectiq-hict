@@ -80,7 +80,7 @@ class HictView extends Ui.View {
 			});
 
 			Log.debug("Starting session recording");
-			session.start();
+			//session.start();
 		}
 
 		// Initialize counters
@@ -137,31 +137,14 @@ class HictView extends Ui.View {
 			periodTime++;
 
 			if (resting) {
-				if (periodTime > restDelay) {
+				if (periodTime >= restDelay) {
 					// Next exercise
-					exerciseCount++;
-					periodTime = 0;
-					resting = false;
-					if (session != null && session.isRecording() && exerciseCount > 1) {
-						Log.debug("Adding lap to session");
-						session.addLap();
-					}
-					Log.debug("New exercise: " + EXERCISES[exerciseCount-1]);
-					notify();
+					switchToWorkout();
 				}
 			} else {
-				if (periodTime > exerciseDelay) {
+				if (periodTime >= exerciseDelay) {
 					// Switch to rest
-					periodTime = 0;
-					resting = true;
-					Log.debug("Rest period");
-					notify();
-
-					// Stop after 12 exercises
-					if (exerciseCount >= maxExerciseCount) {
-						Log.debug("Reached max exercise count");
-						stopActivity();
-					}
+					switchToRest();
 				}
 			}
 		}
@@ -184,6 +167,44 @@ class HictView extends Ui.View {
 		}
 	}
 
+	hidden function switchToWorkout() {
+		Log.debug("Switching to workout period");
+		exerciseCount++;
+		periodTime = 0;
+		resting = false;
+
+		if (session != null) {
+			Log.debug("Session resumed");
+			session.start();
+		}
+
+		Log.debug("New exercise: " + EXERCISES[exerciseCount-1]);
+		notify();
+	}
+
+	hidden function switchToRest() {
+		Log.debug("Switching to rest period");
+		periodTime = 0;
+		resting = true;
+
+		if (session != null && session.isRecording()) {
+			Log.debug("Adding lap to session");
+			session.addLap();
+
+			Log.debug("Session paused");
+			session.stop();
+		}
+
+		Log.debug("Rest period");
+		notify();
+
+		// Stop after 12 exercises
+		if (exerciseCount >= maxExerciseCount) {
+			Log.debug("Reached max exercise count");
+			stopActivity();
+		}
+	}
+
 	hidden function notify() {
 		Attention.vibrate([
 			new Attention.VibeProfile(100, 1000)
@@ -192,7 +213,11 @@ class HictView extends Ui.View {
 
 	hidden function drawMainTextLabel(view) {
 		if (running) {
-			view.setText(resting ? Ui.loadResource(Rez.Strings.rest) : EXERCISES[exerciseCount-1]);
+			if (resting) {
+				view.setText(exerciseCount < 1 ? Ui.loadResource(Rez.Strings.get_ready) : Ui.loadResource(Rez.Strings.rest));
+			} else {
+				view.setText(EXERCISES[exerciseCount-1]);
+			}
 		} else {
 			view.setText(Ui.loadResource(Rez.Strings.press_start));
 		}
@@ -201,7 +226,7 @@ class HictView extends Ui.View {
 	hidden function drawNextExerciseLabel(view) {
 		if (running) {
 			if (resting) {
-				view.setText(exerciseCount < 12 ? (Ui.loadResource(Rez.Strings.next) + " " + EXERCISES[exerciseCount]) : "");
+				view.setText(exerciseCount < maxExerciseCount ? (Ui.loadResource(Rez.Strings.next) + " " + EXERCISES[exerciseCount]) : "");
 			} else {
 				view.setText(Ui.loadResource(Rez.Strings.next) + " " + Ui.loadResource(Rez.Strings.rest));
 			}

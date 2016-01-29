@@ -9,9 +9,17 @@ _[High-Intensity Circuit Training Using Body Weight: Maximum Results With Minima
 
 The watch displays a timer for the 30-second exercises followed by 10-second rest period. Duration of exercise and rest periods is configurable through Garmin Connect Mobile.
 
-The activity is recorded as a training activity in your profile. Each exercise corresponds to a lap.
-
 The application supports heart-rate monitor and temperature sensor.
+
+If you achieve at least 6 exercises, the activity is recorded as a training activity in your Garmin profile.
+
+The activity in your Garmin profile will include basic information such as date, time, total activity time.
+
+ * Rest periods corresponds to pauses in the activity.
+ * Each exercise corresponds to a lap.
+ * Calories will be automatically calculated if a heart-rate monitor is used.
+ * Heart-rate graph if a heart-rate monitor is used.
+ * Temperature graph if a temperature sensor is used.
 
 Supported languages: English, French.
 

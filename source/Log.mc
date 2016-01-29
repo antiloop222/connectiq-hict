@@ -4,6 +4,11 @@ using Toybox.System as Sys;
 //! Logging utility
 module Log {
 
+	//! Returns true if debug is enabled
+	function isDebugEnabled() {
+		return DEBUG;
+	}
+
 	//! Writes a debug message on system console
 	function debug(text) {
 		if (DEBUG) {
@@ -19,5 +24,5 @@ module Log {
 	}
 
 
-	hidden var DEBUG = true;
+	hidden const DEBUG = false;
 }

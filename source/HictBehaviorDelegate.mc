@@ -16,7 +16,9 @@ class HictBehaviorDelegate extends Ui.BehaviorDelegate {
 	//! Key pressed
 	function onKey(key) {
 		if (key.getKey() == Ui.KEY_ENTER) {
-			Log.debug("Key pressed: ENTER");
+			if (Log.isDebugEnabled()) {
+				Log.debug("Key pressed: ENTER");
+			}
 
 			if (view.isRunning()) {
 				// Stop activity

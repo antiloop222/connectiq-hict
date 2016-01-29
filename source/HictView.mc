@@ -79,20 +79,23 @@ class HictView extends Ui.View {
 	//! Start the activity
 	function startActivity() {
 
-		Log.debug("Starting activity");
+		if (Log.isDebugEnabled()) {
+			Log.debug("Starting activity");
+		}
 
 		// Start activity recording
 		if (Toybox has :ActivityRecording) {
-			Log.debug("Activity recording is supported");
+
+			if (Log.isDebugEnabled()) {
+				Log.debug("Activity recording is supported, starting session");
+			}
+
 			var sessionName = Ui.loadResource(Rez.Strings.SessionLabel);
 			session = Recording.createSession({
 				:sport=>Recording.SPORT_TRAINING,
 				:subSport=>Recording.SUB_SPORT_EXERCISE,
 				:name=>sessionName
 			});
-
-			Log.debug("Starting session recording");
-			//session.start();
 		}
 
 		// Initialize counters
@@ -111,22 +114,30 @@ class HictView extends Ui.View {
 	//! Stop the activity
 	function stopActivity() {
 
-		Log.debug("Stopping activity");
+		if (Log.isDebugEnabled()) {
+			Log.debug("Stopping activity");
+		}
 
 		// Stop timer
 		timer.stop();
 
 		// Stop activity recording
 		if (session != null) {
-			Log.debug("Stopping session recording");
+			if (Log.isDebugEnabled()) {
+				Log.debug("Stopping session recording");
+			}
 			session.stop();
 
 			if (exerciseCount < (maxExerciseCount / 2)) {
 				// Ignore sessions < 6 exercises
-				Log.debug("Discarding workout session with only " + exerciseCount + " exercises");
+				if (Log.isDebugEnabled()) {
+					Log.debug("Discarding workout session with only " + exerciseCount + " exercises");
+				}
 				session.discard();
 			} else {
-				Log.debug("Saving workout session");
+				if (Log.isDebugEnabled()) {
+					Log.debug("Saving workout session");
+				}
 				session.save();
 			}
 
@@ -171,11 +182,9 @@ class HictView extends Ui.View {
 		if (info != null) {
 			// Heart rate sensor info
 			heartRate = (info.heartRate == null) ? 0 : info.heartRate;
-			Log.debug("Heartrate: " + heartRate);
 
 			// Temperature sensor info
 			temperature = (info.temperature == null) ? -999 : info.temperature;
-			Log.debug("Temperature: " + temperature);
 
 			// Update view
 			Ui.requestUpdate();
@@ -183,39 +192,59 @@ class HictView extends Ui.View {
 	}
 
 	hidden function switchToWorkout() {
-		Log.debug("Switching to workout period");
+		if (Log.isDebugEnabled()) {
+			Log.debug("Switching to workout period");
+		}
+
 		exerciseCount++;
 		periodTime = 0;
 		resting = false;
 
 		if (session != null) {
-			Log.debug("Session resumed");
+			if (Log.isDebugEnabled()) {
+				Log.debug("Session resumed");
+			}
 			session.start();
 		}
 
-		Log.debug("New exercise: " + EXERCISES[exerciseCount-1]);
+		if (Log.isDebugEnabled()) {
+			Log.debug("New exercise: " + EXERCISES[exerciseCount-1]);
+		}
+
 		notify();
 	}
 
 	hidden function switchToRest() {
-		Log.debug("Switching to rest period");
+		if (Log.isDebugEnabled()) {
+			Log.debug("Switching to rest period");
+		}
+
 		periodTime = 0;
 		resting = true;
 
 		if (session != null && session.isRecording()) {
-			Log.debug("Adding lap to session");
+			if (Log.isDebugEnabled()) {
+				Log.debug("Adding lap to session");
+			}
 			session.addLap();
 
-			Log.debug("Session paused");
+			if (Log.isDebugEnabled()) {
+				Log.debug("Session paused");
+			}
 			session.stop();
 		}
 
-		Log.debug("Rest period");
+		if (Log.isDebugEnabled()) {
+			Log.debug("Rest period");
+		}
+
 		notify();
 
 		// Stop after 12 exercises
 		if (exerciseCount >= maxExerciseCount) {
-			Log.debug("Reached max exercise count");
+			if (Log.isDebugEnabled()) {
+				Log.debug("Reached max exercise count");
+			}
 			stopActivity();
 		}
 	}
@@ -230,10 +259,14 @@ class HictView extends Ui.View {
 	//! This can be called from the app when the settings have changed.
 	function loadPreferences() {
 		exerciseDelay = Prefs.getNumber("exerTime", 30, 15, 9999);
-		Log.debug("Preference: exercise time: " + exerciseDelay);
+		if (Log.isDebugEnabled()) {
+			Log.debug("Preference: exercise time: " + exerciseDelay);
+		}
 
 		restDelay = Prefs.getNumber("restTime", 10, 10, 9999);
-		Log.debug("Preference: rest time: " + restDelay);
+		if (Log.isDebugEnabled()) {
+			Log.debug("Preference: rest time: " + restDelay);
+		}
 	}
 
 

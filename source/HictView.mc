@@ -19,6 +19,7 @@ class HictView extends Ui.View {
 	//! loading resources into memory.
 	function onShow() {
 		Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
+		Sensor.setEnabledSensors([Sensor.SENSOR_FOOTPOD]);
 		Sensor.setEnabledSensors([Sensor.SENSOR_TEMPERATURE]);
 		Sensor.enableSensorEvents(method(:sensorAction));
 	}

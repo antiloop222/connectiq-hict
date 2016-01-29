@@ -13,6 +13,7 @@
 	<string id="RestTimeError">La durée du repos ne peut pas être inférieure à 10 secondes</string>
 
 	<string id="press_start">Appuyez sur Start</string>
+	<string id="no_value">--</string>
 	<string id="get_ready">Préparez-vous</string>
 	<string id="rest">Repos</string>
 	<string id="next">Suiv. :</string>

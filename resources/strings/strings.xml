@@ -14,6 +14,7 @@
 	<string id="RestTimeError">Rest duration cannot be less than 10 seconds</string>
 
 	<string id="press_start">Press start</string>
+	<string id="no_value">--</string>
 	<string id="get_ready">Get ready</string>
 	<string id="rest">Rest</string>
 	<string id="next">Next:</string>

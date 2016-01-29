@@ -39,6 +39,18 @@ class HictView extends Ui.View {
 		view = View.findDrawableById(NextLabel);
 		drawNextExerciseLabel(view);
 
+		// Draw the exercise count label
+		view = View.findDrawableById(ExerciseLabel);
+		drawExerciseLabel(view);
+
+		// Draw the heart rate label
+		view = View.findDrawableById(HeartrateLabel);
+		drawHeartrateLabel(view);
+
+		// Draw the temperature label
+		view = View.findDrawableById(TemperatureLabel);
+		drawTemperatureLabel(view);
+
 		// Call the parent onUpdate function to redraw the layout
 		View.onUpdate(dc);
 	}
@@ -159,9 +171,11 @@ class HictView extends Ui.View {
 		if (info != null) {
 			// Heart rate sensor info
 			heartRate = (info.heartRate == null) ? 0 : info.heartRate;
+			Log.debug("Heartrate: " + heartRate);
 
 			// Temperature sensor info
-			temperature = (info.temperature == null) ? 0 : info.temperature;
+			temperature = (info.temperature == null) ? -999 : info.temperature;
+			Log.debug("Temperature: " + temperature);
 
 			// Update view
 			Ui.requestUpdate();
@@ -252,7 +266,31 @@ class HictView extends Ui.View {
 			var t = (resting ? restDelay : exerciseDelay) - periodTime - 1;
 			view.setText(to2digitFormat(t));
 		} else {
-			view.setText("--");
+			view.setText(Ui.loadResource(Rez.Strings.no_value));
+		}
+	}
+
+	hidden function drawExerciseLabel(view) {
+		if (running && exerciseCount > 0) {
+			view.setText(Lang.format("$1$ / $2$", [exerciseCount.format("%d"), maxExerciseCount.format("%d")]));
+		} else {
+			view.setText(Ui.loadResource(Rez.Strings.no_value));
+		}
+	}
+
+	hidden function drawHeartrateLabel(view) {
+		if (heartRate > 0) {
+			view.setText(Lang.format("$1$", [heartRate.format("%d")]));
+		} else {
+			view.setText(Ui.loadResource(Rez.Strings.no_value));
+		}
+	}
+
+	hidden function drawTemperatureLabel(view) {
+		if (temperature > -999) {
+			view.setText(Lang.format("$1$", [temperature.format("%1.1f")]));
+		} else {
+			view.setText(Ui.loadResource(Rez.Strings.no_value));
 		}
 	}
 
@@ -264,9 +302,9 @@ class HictView extends Ui.View {
 		if (number == 0) {
 			string = "00";
 		} else if (number < 10) {
-			string = Lang.format("0$1$", [number.format("%.d")]);
+			string = Lang.format("0$1$", [number.format("%d")]);
 		} else {
-			string = Lang.format("$1$", [number.format("%.d")]);
+			string = Lang.format("$1$", [number.format("%d")]);
 		}
 		return string;
 	}
@@ -317,4 +355,7 @@ class HictView extends Ui.View {
 	hidden const TextLabel = "TextLabel";
 	hidden const NextLabel = "NextLabel";
 	hidden const TimerLabel = "TimerLabel";
+	hidden const ExerciseLabel = "ExerciseLabel";
+	hidden const HeartrateLabel = "HeartrateLabel";
+	hidden const TemperatureLabel = "TemperatureLabel";
 }

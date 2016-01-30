@@ -12,22 +12,22 @@
 	<string id="RestTimePrompt">Entrer la durée de la période de repos, en secondes</string>
 	<string id="RestTimeError">La durée du repos ne peut pas être inférieure à 10 secondes</string>
 
-	<string id="press_start">Appuyez sur Start</string>
+	<string id="press_start">App. sur Démarrer</string>
 	<string id="no_value">--</string>
 	<string id="get_ready">Préparez-vous</string>
 	<string id="rest">Repos</string>
 	<string id="next">Suiv. :</string>
 
 	<!-- Keep exercise name less than 20 characters -->
-	<string id="exercise1">Sauts Jumping Jacks</string>
-	<string id="exercise2">Faire la chaise (mur)</string>
+	<string id="exercise1">Jumping jacks</string>
+	<string id="exercise2">Chaise (dos au mur)</string>
 	<string id="exercise3">Pompes</string>
-	<string id="exercise4">Abdo crunch</string>
-	<string id="exercise5">Montées sur chaise</string>
+	<string id="exercise4">Abdo. crunch</string>
+	<string id="exercise5">Montée sur chaise</string>
 	<string id="exercise6">Squats</string>
-	<string id="exercise7">Triceps (chaise)</string>
+	<string id="exercise7">Dips sur chaise</string>
 	<string id="exercise8">Planche</string>
-	<string id="exercise9">Montées de genoux</string>
+	<string id="exercise9">Montée de genoux</string>
 	<string id="exercise10">Fentes avant</string>
 	<string id="exercise11">Pompes en T</string>
 	<string id="exercise12">Planche latérale</string>

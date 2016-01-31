@@ -32,3 +32,7 @@ Supported models: vívoactive.
 ## History ##
 
 7-min is tested on Garmin vívoactive running Connect IQ 1.2.3.
+
+### v.1.0 - 2016-01-31
+
+* First public release.

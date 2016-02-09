@@ -18,6 +18,7 @@
 	<string id="get_ready">Get ready</string>
 	<string id="rest">Rest</string>
 	<string id="next">Next:</string>
+	<string id="stop_session">Stop session?</string>
 
 	<!-- Keep exercise name less than 20 characters -->
 	<string id="exercise1">Jumping jacks</string>

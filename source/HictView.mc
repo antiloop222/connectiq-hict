@@ -111,7 +111,11 @@ class HictView extends Ui.View {
 		Ui.requestUpdate();
 	}
 
-	//! Stop the activity
+	//! Stop the activity.
+	//! If the session is running, then ask for confirmation.
+	//! If confirmed, then closeActivity should be called by the handler.
+	//! If not confirmed, then resumeActivity should be called by the handler.
+	//! If the session is not running, then close the activity.
 	function stopActivity() {
 
 		if (Log.isDebugEnabled()) {
@@ -120,6 +124,31 @@ class HictView extends Ui.View {
 
 		// Stop timer
 		timer.stop();
+
+		if (running) {
+			// Ask for confirmation
+			var dialog = new Ui.Confirmation(Ui.loadResource(Rez.Strings.stop_session));
+			var delegate = new StopConfirmationDelegate();
+			delegate.setHictView(self);
+			Ui.pushView(dialog, delegate, Ui.SLIDE_IMMEDIATE );
+		} else {
+			// Close activity
+			closeActivity();
+		}
+	}
+
+	//! Resume the activity
+	function resumeActivity() {
+		// Continue timer
+		timer.start(method(:timerAction), 1000, true);
+	}
+
+	//! Close the activity and clean-up the session.
+	function closeActivity() {
+
+		if (Log.isDebugEnabled()) {
+			Log.debug("Closing activity");
+		}
 
 		// Stop activity recording
 		if (session != null) {

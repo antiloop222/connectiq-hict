@@ -2,7 +2,7 @@
 
 ## Description ##
 
-[7-Minute Workout (HICT)](https://apps.garmin.com/fr-FR/apps/65a44a9d-465d-4e76-a866-c0667e51cf98) application for Garmin watches.
+[7-Minute Workout (HICT)](https://apps.garmin.com/en-US/apps/65a44a9d-465d-4e76-a866-c0667e51cf98) application for Garmin watches.
 
 This watch application drives you through the execution of 12 exercises as described in the article from ACSM'S Health & Fitness Journal:
 _[High-Intensity Circuit Training Using Body Weight: Maximum Results With Minimal Investment](http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx)_.
@@ -27,7 +27,7 @@ The activity in your Garmin profile will include basic information such as date,
 
 ## Installation ##
 
-Install from Garmin's [Connect IQ Store](https://apps.garmin.com/fr-FR/apps/65a44a9d-465d-4e76-a866-c0667e51cf98) or from Garmin Connect Mobile.
+Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a44a9d-465d-4e76-a866-c0667e51cf98) or from Garmin Connect Mobile.
 
 ## Support ##
 
@@ -47,7 +47,12 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
-7-min is tested on Garmin vívoactive running Connect IQ 1.2.3.
+7-min is tested on Garmin vívoactive running Connect IQ 1.2.4.
+
+### v.1.1 - 2016-02-10
+
+* Added confirmation dialog when stopping an active session.
+* Upgrade to Connect IQ SD 1.2.4.
 
 ### v.1.0 - 2016-01-31
 

@@ -20,6 +20,7 @@ class HictView extends Ui.View {
 	function onShow() {
 		Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
 		Sensor.setEnabledSensors([Sensor.SENSOR_TEMPERATURE]);
+		Sensor.setEnabledSensors([Sensor.SENSOR_FOOTPOD]);
 		Sensor.enableSensorEvents(method(:sensorAction));
 	}
 
@@ -215,6 +216,9 @@ class HictView extends Ui.View {
 			// Temperature sensor info
 			temperature = (info.temperature == null) ? -999 : info.temperature;
 
+			// Cadence sensor info
+			cadence = (info.cadence == null) ? 0 : info.cadence;
+
 			// Update view
 			Ui.requestUpdate();
 		}
@@ -408,6 +412,8 @@ class HictView extends Ui.View {
 	hidden var heartRate = 0;
 	// Temperature value, if available
 	hidden var temperature = 0;
+	// Cadence value, if available
+	hidden var cadence = 0;
 
 	// Exercise delay
 	hidden var exerciseDelay = 30;

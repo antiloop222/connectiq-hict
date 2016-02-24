@@ -330,11 +330,7 @@ class HictView extends Ui.View {
 
 	hidden function drawNextExerciseLabel(view) {
 		if (running) {
-			if (resting) {
-				view.setText(exerciseCount < maxExerciseCount ? (Ui.loadResource(Rez.Strings.next) + " " + EXERCISES[exerciseCount]) : "");
-			} else {
-				view.setText(Ui.loadResource(Rez.Strings.next) + " " + Ui.loadResource(Rez.Strings.rest));
-			}
+			view.setText(exerciseCount < maxExerciseCount ? EXERCISES[exerciseCount] : "");
 		} else {
 			view.setText("");
 		}

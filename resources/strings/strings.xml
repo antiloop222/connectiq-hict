@@ -32,5 +32,6 @@
 	<string id="exercise9">High-knees running</string>
 	<string id="exercise10">Lunge</string>
 	<string id="exercise11">Push-up rotation</string>
-	<string id="exercise12">Side plank</string>
+	<string id="exercise12">Side plank left</string>
+	<string id="exercise13">Side plank right</string>
 </strings>

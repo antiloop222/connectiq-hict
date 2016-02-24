@@ -77,6 +77,12 @@ class HictView extends Ui.View {
 		return running && resting;
 	}
 
+	//! Returns true if the workout is finished, false otherwise.
+	function isDone() {
+		return (!running) || (exerciseCount >= maxExerciseCount);
+	}
+
+
 	//! Start the activity
 	function startActivity() {
 
@@ -127,7 +133,15 @@ class HictView extends Ui.View {
 		// Stop timer
 		timer.stop();
 
-		if (running) {
+		// Pause activity recording
+		if (session != null) {
+			if (Log.isDebugEnabled()) {
+				Log.debug("Stopping session recording");
+			}
+			session.stop();
+		}
+
+		if (running && !isDone()) {
 			// Ask for confirmation
 			var dialog = new Ui.Confirmation(Ui.loadResource(Rez.Strings.stop_session));
 			var delegate = new StopConfirmationDelegate();
@@ -154,11 +168,6 @@ class HictView extends Ui.View {
 
 		// Stop activity recording
 		if (session != null) {
-			if (Log.isDebugEnabled()) {
-				Log.debug("Stopping session recording");
-			}
-			session.stop();
-
 			if (exerciseCount < (maxExerciseCount / 2)) {
 				// Ignore sessions < 6 exercises
 				if (Log.isDebugEnabled()) {
@@ -277,8 +286,8 @@ class HictView extends Ui.View {
 
 		notify();
 
-		// Stop after 12 exercises
-		if (exerciseCount >= maxExerciseCount) {
+		// Stop after 13 exercises
+		if (isDone()) {
 			if (Log.isDebugEnabled()) {
 				Log.debug("Reached max exercise count");
 			}
@@ -392,7 +401,8 @@ class HictView extends Ui.View {
 		Ui.loadResource(Rez.Strings.exercise9),
 		Ui.loadResource(Rez.Strings.exercise10),
 		Ui.loadResource(Rez.Strings.exercise11),
-		Ui.loadResource(Rez.Strings.exercise12)
+		Ui.loadResource(Rez.Strings.exercise12),
+		Ui.loadResource(Rez.Strings.exercise13)
 	];
 
 	// Running flag, true if activity is running
@@ -407,10 +417,10 @@ class HictView extends Ui.View {
 
 	// Time for current exercise/pause period
 	hidden var periodTime = 0;
-	// Exercise number now playing (1 to 12)
+	// Exercise number now playing (1 to 13)
 	hidden var exerciseCount = 0;
 	// Max number of exercises
-	hidden var maxExerciseCount = 12;
+	hidden var maxExerciseCount = 13;
 
 	// Heart rate value, if available
 	hidden var heartRate = 0;

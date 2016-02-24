@@ -31,5 +31,6 @@
 	<string id="exercise9">Montée de genoux</string>
 	<string id="exercise10">Fentes avant</string>
 	<string id="exercise11">Pompes en T</string>
-	<string id="exercise12">Planche latérale</string>
+	<string id="exercise12">Planche lat. gauche</string>
+	<string id="exercise13">Planche lat. droite</string>
 </strings>

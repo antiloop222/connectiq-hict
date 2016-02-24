@@ -103,6 +103,7 @@ class HictView extends Ui.View {
 		running = true;
 		resting = true;
 		exerciseCount = 0;
+		periodTime = 0;
 
 		// Start timer
 		timer = new Timer.Timer();
@@ -179,6 +180,7 @@ class HictView extends Ui.View {
 		running = false;
 		resting = false;
 		exerciseCount = 0;
+		periodTime = 0;
 
 		// Update view
 		Ui.requestUpdate();
@@ -256,15 +258,17 @@ class HictView extends Ui.View {
 		resting = true;
 
 		if (session != null && session.isRecording()) {
+			// Add lap
 			if (Log.isDebugEnabled()) {
 				Log.debug("Adding lap to session");
 			}
 			session.addLap();
 
+			// Pause session recording
+			session.stop();
 			if (Log.isDebugEnabled()) {
 				Log.debug("Session paused");
 			}
-			session.stop();
 		}
 
 		if (Log.isDebugEnabled()) {

@@ -210,6 +210,11 @@ class HictView extends Ui.View {
                 if (periodTime >= exerciseDelay) {
                     // Switch to rest
                     switchToRest();
+                } else {
+                    if (periodTime % 10 == 0) {
+                        // Short vibration
+                        notifyShort();
+                    }
                 }
             }
         }
@@ -255,7 +260,7 @@ class HictView extends Ui.View {
             Log.debug("New exercise: " + EXERCISES[exerciseCount-1]);
         }
 
-        notify();
+        notifyEnd();
     }
 
     hidden function switchToRest() {
@@ -284,7 +289,7 @@ class HictView extends Ui.View {
             Log.debug("Rest period");
         }
 
-        notify();
+        notifyEnd();
 
         // Stop after 13 exercises
         if (isDone()) {
@@ -295,9 +300,15 @@ class HictView extends Ui.View {
         }
     }
 
-    hidden function notify() {
+    hidden function notifyEnd() {
         Attention.vibrate([
             new Attention.VibeProfile(100, 1000)
+        ]);
+    }
+
+    hidden function notifyShort() {
+        Attention.vibrate([
+            new Attention.VibeProfile(100, 400)
         ]);
     }
 

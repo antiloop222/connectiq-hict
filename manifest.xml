@@ -4,6 +4,7 @@
 		<iq:products>
             <iq:product id="vivoactive"/>
             <iq:product id="fr920xt"/>
+            <iq:product id="epix"/>
         </iq:products>
 
 		<iq:permissions>

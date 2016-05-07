@@ -4,7 +4,7 @@
 
 [7-Minute Workout (HICT)](https://apps.garmin.com/en-US/apps/65a44a9d-465d-4e76-a866-c0667e51cf98) application for Garmin watches.
 
-This watch application drives you through the execution of 12 exercises as described in the article from ACSM'S Health & Fitness Journal:
+This watch application drives you through the execution of 13 exercises as described in the article from ACSM'S Health & Fitness Journal:
 _[High-Intensity Circuit Training Using Body Weight: Maximum Results With Minimal Investment](http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx)_.
 
 The watch displays a timer for the 30-second exercises followed by 10-second rest period. Duration of exercise and rest periods is configurable through Garmin Connect Mobile.
@@ -35,7 +35,7 @@ Please submit questions, issues and enhancement requests on this project's [issu
 
 Supported languages: English, French.
 
-Supported models: vívoactive.
+Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™.
 
 ## Development ##
 
@@ -47,7 +47,15 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
-7-min is tested on Garmin vívoactive running Connect IQ 1.2.4.
+7-min is tested on Garmin vívoactive® running Connect IQ 1.2.6.
+
+### v.1.2 - 2016-05-07
+
+* Added short vibration every 10 seconds
+* Changed text color: green for current exercise, orange for next exercise
+* Added support for vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™
+* Added second side plank exercise
+* Fixed reset of period time when activity stopped
 
 ### v.1.1 - 2016-02-10
 

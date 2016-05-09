@@ -250,10 +250,18 @@ class HictView extends Ui.View {
         resting = false;
 
         if (session != null) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Session resumed");
+            if (!session.isRecording()) {
+                if (Log.isDebugEnabled()) {
+                    Log.debug("Starting session");
+                }
+                session.start();
+            } else {
+                // Add lap
+                if (Log.isDebugEnabled()) {
+                    Log.debug("Adding lap to session");
+                }
+                session.addLap();
             }
-            session.start();
         }
 
         if (Log.isDebugEnabled()) {
@@ -277,12 +285,6 @@ class HictView extends Ui.View {
                 Log.debug("Adding lap to session");
             }
             session.addLap();
-
-            // Pause session recording
-            session.stop();
-            if (Log.isDebugEnabled()) {
-                Log.debug("Session paused");
-            }
         }
 
         if (Log.isDebugEnabled()) {

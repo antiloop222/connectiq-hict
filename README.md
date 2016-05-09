@@ -35,7 +35,7 @@ Please submit questions, issues and enhancement requests on this project's [issu
 
 Supported languages: English, French.
 
-Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™.
+Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™, fēnix® 3, fēnix® 3 HR.
 
 ## Development ##
 
@@ -48,6 +48,11 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive® running Connect IQ 1.2.6.
+
+### v.1.3 - 2016-05-09
+
+* Added support for fēnix® 3 and fēnix® 3 HR
+* Rest time is now included in workout session as lap
 
 ### v.1.2 - 2016-05-07
 

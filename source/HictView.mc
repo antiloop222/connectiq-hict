@@ -19,8 +19,7 @@ class HictView extends Ui.View {
     //! loading resources into memory.
     function onShow() {
         Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
-        Sensor.setEnabledSensors([Sensor.SENSOR_TEMPERATURE]);
-        Sensor.setEnabledSensors([Sensor.SENSOR_FOOTPOD]);
+        // Sensor.setEnabledSensors([Sensor.SENSOR_TEMPERATURE]);
         Sensor.enableSensorEvents(method(:sensorAction));
     }
 
@@ -49,8 +48,8 @@ class HictView extends Ui.View {
         drawHeartrateLabel(view);
 
         // Draw the temperature label
-        view = View.findDrawableById(TemperatureLabel);
-        drawTemperatureLabel(view);
+        // view = View.findDrawableById(TemperatureLabel);
+        // drawTemperatureLabel(view);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
@@ -228,12 +227,15 @@ class HictView extends Ui.View {
         if (info != null) {
             // Heart rate sensor info
             heartRate = (info.heartRate == null) ? 0 : info.heartRate;
+            if (Log.isDebugEnabled()) {
+                Log.debug("Heartrate info: " + heartRate);
+            }
 
             // Temperature sensor info
             temperature = (info.temperature == null) ? -999 : info.temperature;
-
-            // Cadence sensor info
-            cadence = (info.cadence == null) ? 0 : info.cadence;
+            if (Log.isDebugEnabled()) {
+                Log.debug("Temperature info: " + temperature);
+            }
 
             // Update view
             Ui.requestUpdate();
@@ -435,8 +437,6 @@ class HictView extends Ui.View {
     hidden var heartRate = 0;
     // Temperature value, if available
     hidden var temperature = 0;
-    // Cadence value, if available
-    hidden var cadence = 0;
 
     // Exercise delay
     hidden var exerciseDelay = 30;

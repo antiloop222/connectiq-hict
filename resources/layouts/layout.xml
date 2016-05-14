@@ -6,6 +6,8 @@
 	<label id="ExerciseLabel" x="45" y="48" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" text="@Strings.no_value" />
     <bitmap id="HeartrateIcon" x="15" y="78" filename="../drawables/heartrate-24.png" dithering="none" />
 	<label id="HeartrateLabel" x="45" y="78" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" text="@Strings.no_value" />
+	<!--
     <bitmap id="TemperatureIcon" x="15" y="108" filename="../drawables/temperature-24.png" dithering="none" />
 	<label id="TemperatureLabel" x="45" y="108" font="Gfx.FONT_MEDIUM" justification="Gfx.TEXT_JUSTIFY_LEFT" color="Gfx.COLOR_WHITE" text="@Strings.no_value" />
+	-->
 </layout>

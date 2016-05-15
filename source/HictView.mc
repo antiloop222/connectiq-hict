@@ -18,8 +18,7 @@ class HictView extends Ui.View {
     //! the state of this View and prepare it to be shown. This includes
     //! loading resources into memory.
     function onShow() {
-        Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE]);
-        // Sensor.setEnabledSensors([Sensor.SENSOR_TEMPERATURE]);
+        Sensor.setEnabledSensors([Sensor.SENSOR_HEARTRATE, Sensor.SENSOR_TEMPERATURE, Sensor.SENSOR_FOOTPOD]);
         Sensor.enableSensorEvents(method(:sensorAction));
     }
 
@@ -48,8 +47,8 @@ class HictView extends Ui.View {
         drawHeartrateLabel(view);
 
         // Draw the temperature label
-        // view = View.findDrawableById(TemperatureLabel);
-        // drawTemperatureLabel(view);
+        view = View.findDrawableById(TemperatureLabel);
+        drawTemperatureLabel(view);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);

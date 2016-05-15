@@ -9,7 +9,7 @@ _[High-Intensity Circuit Training Using Body Weight: Maximum Results With Minima
 
 The watch displays a timer for the 30-second exercises followed by 10-second rest period. Duration of exercise and rest periods is configurable through Garmin Connect Mobile.
 
-The application supports heart-rate monitor (HRM).
+The application supports heart-rate monitor (HRM) and temperature sensor (Tempe).
 
 If you achieve at least 6 exercises, the activity is recorded as a training activity in your Garmin profile.
 
@@ -18,6 +18,7 @@ The activity in your Garmin profile will include basic information such as date,
  * Rest periods corresponds to pauses in the activity.
  * Each exercise corresponds to a lap.
  * Heart-rate graph if a heart-rate monitor is used.
+ * Temperature graph if a temperature sensor is used.
  * Calories will be automatically calculated if a heart-rate monitor is used.
 
 ![Capture](dist/images/capture1.png)
@@ -46,11 +47,16 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
-7-min is tested on Garmin vívoactive® running Connect IQ 1.2.6.
+7-min is tested on Garmin vívoactive® running Connect IQ 1.2.8.
+
+### v.1.5 - 2016-05-15
+
+* Fix issue with HRM sensor detection
+* Add support for temperature sensor (Tempe) back
 
 ### v.1.4 - 2016-05-14
 
-* Removed support for temperature sensor (Tempe) due to issues in latest ConnectIQ
+* Removed temporarily support for temperature sensor (Tempe)
 
 ### v.1.3 - 2016-05-09
 

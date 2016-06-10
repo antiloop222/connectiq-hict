@@ -47,7 +47,12 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
-7-min is tested on Garmin vívoactive® running Connect IQ 1.2.8.
+7-min is tested on Garmin vívoactive®.
+
+### v.1.6 - 2016-06-10
+
+* Fix display issue on Forerunner® 920XT.
+* Upgrade to Connect IQ SDK 1.2.9.
 
 ### v.1.5 - 2016-05-15
 

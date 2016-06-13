@@ -49,6 +49,10 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 7-min is tested on Garmin vívoactive®.
 
+### v.1.7 - 2016-06-13
+
+* Add Danish support, thanks to Anonymous.
+
 ### v.1.6 - 2016-06-10
 
 * Fix display issue on Forerunner® 920XT.

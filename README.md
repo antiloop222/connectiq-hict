@@ -15,13 +15,14 @@ If you achieve at least 6 exercises, the activity is recorded as a training acti
 
 The activity in your Garmin profile will include basic information such as date, time, total activity time.
 
- * Rest periods corresponds to pauses in the activity.
- * Each exercise corresponds to a lap.
+ * Each exercise and rest period corresponds to a lap.
  * Heart-rate graph if a heart-rate monitor is used.
  * Temperature graph if a temperature sensor is used.
  * Calories will be automatically calculated if a heart-rate monitor is used.
 
 ![Capture](dist/images/capture1.png)
+![Capture](dist/images/capture4.png)
+![Capture](dist/images/capture5.png)
 ![Capture](dist/images/capture2.png)
 ![Capture](dist/images/capture3.png)
 
@@ -48,6 +49,10 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.8 - 2016-08-23
+
+* Upgrade to Connect IQ SDK 2.1.2.
 
 ### v.1.7 - 2016-06-13
 

@@ -2,6 +2,8 @@
 
 This watch application drives you through the execution of 13 exercises described in literature as High-Intensity Circuit Training.
 
+The application displays a timer for the 30-second exercises followed by 10-second rest period (configurable).
+
 ----------
 LAST-MINUTE NOTES based on user reviews:
 * vivoactive HR users have reported issues with HRM detection. This concerns all ConnectIQ apps: https://forums.garmin.com/showthread.php?350783-vivoactive-hr-not-starting-the-optical-sensor-for-CIQ-apps
@@ -9,7 +11,6 @@ LAST-MINUTE NOTES based on user reviews:
 * Calories will not be calculated without heart-rate monitor (HRM)!
 ----------
 
-The application displays a timer for the 30-second exercises followed by 10-second rest period (configurable).
 Duration of exercise and rest periods is configurable through Garmin Connect Mobile.
 A long vibration will trigger at the beginning and at the end of each exercise.
 A short vibration will trigger every 10 seconds during the exercise.
@@ -39,48 +40,3 @@ License : https://opensource.org/licenses/MIT
 
 Source code is made available under the MIT license on the Bitbucket project : https://bitbucket.org/obagot/connectiq-hict
 Pull requests and translations are welcomed!
-
-
-== VERSIONS ==
-
-7-min is tested on Garmin vívoactive®.
-
-v.1.7 - 2016-06-13
-
-- Add Danish support, thanks to Anonymous.
-
-v.1.6 - 2016-06-10
-
-- Fix display issue on Forerunner® 920XT.
-- Upgrade to Connect IQ SDK 1.2.9.
-
-v.1.5 - 2016-05-15
-
-- Fix issue with HRM sensor detection
-- Add support for temperature sensor (Tempe) back
-- Upgrade to Connect IQ SDK 1.2.8.
-
-v.1.4 - 2016-05-14
-
-- Removed temporarily support for temperature sensor (Tempe)
-
-v.1.3 - 2016-05-09
-
-- Added support for fēnix® 3 and fēnix® 3 HR
-- Rest time is now included in workout session as lap
-
-v.1.2 - 2016-05-07
-
-- Added short vibration every 10 seconds
-- Changed text color: green for current exercise, orange for next exercise
-- Added support for vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™
-- Added second side plank exercise
-- Fixed reset of period time when activity stopped
-
-v.1.1 - 2016-02-10
-
-- Added confirmation dialog when stopping an active session.
-- Upgrade to Connect IQ SDK 1.2.4.
-
-v.1.0 - 2016-01-31
-- First public release.

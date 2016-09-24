@@ -98,7 +98,7 @@ class HictView extends Ui.View {
             var sessionName = Ui.loadResource(Rez.Strings.SessionLabel);
             session = Recording.createSession({
                 :sport=>Recording.SPORT_TRAINING,
-                :subSport=>Recording.SUB_SPORT_EXERCISE,
+                :subSport=>Recording.SUB_SPORT_CARDIO_TRAINING,
                 :name=>sessionName
             });
         }

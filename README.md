@@ -34,9 +34,9 @@ Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a4
 
 Please submit questions, issues and enhancement requests on this project's [issue tracker](https://bitbucket.org/obagot/connectiq-hict/issues).
 
-Supported languages: English, French.
+Supported languages: Danish, English, French.
 
-Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™, fēnix® 3, fēnix® 3 HR.
+Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 630, 235, 230, fēnix® 3, fēnix® 3 HR.
 
 ## Development ##
 
@@ -49,6 +49,12 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.9 - 2016-10-15
+
+* Change activity type from strength training to cardio training.
+* Upgrade to Connect IQ SDK 2.1.3.
+* Remove epix™ support.
 
 ### v.1.8 - 2016-08-23
 

@@ -31,8 +31,8 @@ Use the configuration in Garmin Connect or Garmin Express to customize the work/
 == SUPPORT ==
 
 Please submit questions, issues and enhancement requests on the Bitbucket project : https://bitbucket.org/obagot/connectiq-hict/issues
-Supported languages: English, French.
-Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™, fēnix® 3, fēnix® 3 HR.
+Supported languages: Danish, English, French.
+Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 630, 235, 230, fēnix® 3, fēnix® 3 HR.
 License : https://opensource.org/licenses/MIT
 
 

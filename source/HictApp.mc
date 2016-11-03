@@ -1,6 +1,9 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 
+// Activity type
+var activityType = 0;
+
 //! Application
 class HictApp extends App.AppBase {
 

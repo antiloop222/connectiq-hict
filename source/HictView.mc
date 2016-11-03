@@ -96,9 +96,22 @@ class HictView extends Ui.View {
             }
 
             var sessionName = Ui.loadResource(Rez.Strings.SessionLabel);
+            var type = Recording.SUB_SPORT_CARDIO_TRAINING;
+            if (activityType == 1) {
+                type = Recording.SUB_SPORT_STRENGTH_TRAINING;
+                if (Log.isDebugEnabled()) {
+                    Log.debug("Activity type: Strength");
+                }
+            } else {
+                type = Recording.SUB_SPORT_CARDIO_TRAINING;
+                if (Log.isDebugEnabled()) {
+                    Log.debug("Activity type: Cardio");
+                }
+            }
+
             session = Recording.createSession({
                 :sport=>Recording.SPORT_TRAINING,
-                :subSport=>Recording.SUB_SPORT_CARDIO_TRAINING,
+                :subSport=>type,
                 :name=>sessionName
             });
         }
@@ -326,6 +339,11 @@ class HictView extends Ui.View {
         restDelay = Prefs.getNumber("restTime", 10, 10, 9999);
         if (Log.isDebugEnabled()) {
             Log.debug("Preference: rest time: " + restDelay);
+        }
+
+        activityType = Prefs.getNumber("activityType", 0, 0, 999);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Preference: activity type: " + activityType);
         }
     }
 

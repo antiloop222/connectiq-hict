@@ -11,12 +11,16 @@
 	<string id="RestTimeLabel">Durée du repos (s)</string>
 	<string id="RestTimePrompt">Entrer la durée de la période de repos, en secondes</string>
 	<string id="RestTimeError">La durée du repos ne peut pas être inférieure à 10 secondes</string>
+	<string id="ActivityTypeLabel">Type d'activité</string>
+	<string id="ActivityTypePrompt">Selectionner le type d'activité</string>
 
 	<string id="press_start">App. sur Démarrer</string>
 	<string id="no_value">--</string>
 	<string id="get_ready">Préparez-vous</string>
 	<string id="rest">Repos</string>
 	<string id="stop_session">Arrêter la session ?</string>
+	<string id="cardio">Cardio</string>
+	<string id="strength">Musculation</string>
 
 	<!-- Keep exercise name less than 20 characters -->
 	<string id="exercise1">Jumping jacks</string>

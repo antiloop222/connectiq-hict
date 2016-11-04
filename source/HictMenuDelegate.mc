@@ -31,8 +31,9 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
 
     function setActivityType(type) {
         activityType = type;
+
+        // Save to pref store
         var app = App.getApp();
         app.setProperty("activityType", type);
-        //Ui.popView(Ui.SLIDE_DOWN);
     }
 }

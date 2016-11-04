@@ -12,7 +12,7 @@
 	<string id="RestTimePrompt">Entrer la durée de la période de repos, en secondes</string>
 	<string id="RestTimeError">La durée du repos ne peut pas être inférieure à 10 secondes</string>
 	<string id="ActivityTypeLabel">Type d'activité</string>
-	<string id="ActivityTypePrompt">Selectionner le type d'activité</string>
+	<string id="ActivityTypePrompt">Sélectionner le type d'activité</string>
 
 	<string id="press_start">App. sur Démarrer</string>
 	<string id="no_value">--</string>

@@ -2,4 +2,5 @@
 	<property id="appVersion" type="string">@Strings.AppVersion</property>
 	<property id="exerTime" type="number">30</property>
 	<property id="restTime" type="number">10</property>
+	<property id="activityType" type="number">0</property>
 </properties>

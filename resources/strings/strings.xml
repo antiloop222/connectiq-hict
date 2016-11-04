@@ -12,12 +12,16 @@
 	<string id="RestTimeLabel">Rest duration (s)</string>
 	<string id="RestTimePrompt">Enter duration of rest, period in seconds</string>
 	<string id="RestTimeError">Rest duration cannot be less than 10 seconds</string>
+	<string id="ActivityTypeLabel">Activity type</string>
+	<string id="ActivityTypePrompt">Select the activity type</string>
 
 	<string id="press_start">Press start</string>
 	<string id="no_value">--</string>
 	<string id="get_ready">Get ready</string>
 	<string id="rest">Rest</string>
 	<string id="stop_session">Stop session?</string>
+	<string id="cardio">Cardio</string>
+	<string id="strength">Strength</string>
 
 	<!-- Keep exercise name less than 20 characters -->
 	<string id="exercise1">Jumping jacks</string>

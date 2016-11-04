@@ -8,4 +8,10 @@
 	<setting propertyKey="@Properties.restTime" title="@Strings.RestTimeLabel" prompt="@Strings.RestTimePrompt">
 		<settingConfig type="numeric" min="10" errorMessage="@Strings.RestTimeError" />
 	</setting>
+	<setting propertyKey="@Properties.activityType" title="@Strings.ActivityTypeLabel" prompt="@Strings.ActivityTypePrompt">
+		<settingConfig type="list" required="true">
+			<listEntry value="0">@Strings.cardio</listEntry>
+			<listEntry value="1">@Strings.strength</listEntry>
+		</settingConfig>
+	</setting>
 </settings>

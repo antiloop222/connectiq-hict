@@ -241,15 +241,15 @@ class HictView extends Ui.View {
         if (info != null) {
             // Heart rate sensor info
             heartRate = (info.heartRate == null) ? 0 : info.heartRate;
-            if (Log.isDebugEnabled()) {
-                Log.debug("Heartrate info: " + heartRate);
-            }
+            // if (Log.isDebugEnabled()) {
+            //     Log.debug("Heartrate info: " + heartRate);
+            // }
 
             // Temperature sensor info
             temperature = (info.temperature == null) ? -999 : info.temperature;
-            if (Log.isDebugEnabled()) {
-                Log.debug("Temperature info: " + temperature);
-            }
+            // if (Log.isDebugEnabled()) {
+            //     Log.debug("Temperature info: " + temperature);
+            // }
 
             // Update view
             Ui.requestUpdate();

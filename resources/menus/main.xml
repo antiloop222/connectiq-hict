@@ -1,5 +1,6 @@
 <menu id="MainMenu">
-    <menu-item id="ExerciseDuration">@Strings.ExerciseTimeLabel</menu-item>
-    <menu-item id="RestDuration">@Strings.RestTimeLabel</menu-item>
-    <menu-item id="ActivityType">@Strings.ActivityTypeLabel</menu-item>
+	<menu-item id="ExerciseDuration">@Strings.ExerciseTimeLabel</menu-item>
+	<menu-item id="RestDuration">@Strings.RestTimeLabel</menu-item>
+	<menu-item id="ExerciseCount">@Strings.ExerciseCountLabel</menu-item>
+	<menu-item id="ActivityType">@Strings.ActivityTypeLabel</menu-item>
 </menu>

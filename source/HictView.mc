@@ -83,6 +83,7 @@ class HictView extends Ui.View {
 
     //! Start the activity
     function startActivity() {
+        loadPreferences();
 
         if (Log.isDebugEnabled()) {
             Log.debug("Starting activity");
@@ -218,7 +219,7 @@ class HictView extends Ui.View {
                     switchToWorkout();
                 }
             } else {
-                if (periodTime >= exerciseDelay) {
+                if (periodTime >= exerciseDuration) {
                     // Switch to rest
                     switchToRest();
                 } else {
@@ -331,9 +332,9 @@ class HictView extends Ui.View {
     //! Load preferences for the view from the object store.
     //! This can be called from the app when the settings have changed.
     function loadPreferences() {
-        exerciseDelay = Prefs.getNumber("exerTime", 30, 15, 9999);
+        exerciseDuration = Prefs.getNumber("exerTime", 30, 15, 9999);
         if (Log.isDebugEnabled()) {
-            Log.debug("Preference: exercise time: " + exerciseDelay);
+            Log.debug("Preference: exercise duration: " + exerciseDuration);
         }
 
         restDelay = Prefs.getNumber("restTime", 10, 10, 9999);
@@ -370,7 +371,7 @@ class HictView extends Ui.View {
 
     hidden function drawTimerLabel(view) {
         if (running) {
-            var t = (resting ? restDelay : exerciseDelay) - periodTime - 1;
+            var t = (resting ? restDelay : exerciseDuration) - periodTime - 1;
             view.setText(to2digitFormat(t));
         } else {
             view.setText(Ui.loadResource(Rez.Strings.no_value));
@@ -455,8 +456,6 @@ class HictView extends Ui.View {
     // Temperature value, if available
     hidden var temperature = 0;
 
-    // Exercise delay
-    hidden var exerciseDelay = 30;
     // Pause delay
     hidden var restDelay = 10;
 

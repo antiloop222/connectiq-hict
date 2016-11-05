@@ -3,6 +3,7 @@ using Toybox.WatchUi as Ui;
 
 // Activity type
 var activityType = 0;
+var exerciseDuration = 30;
 
 //! Application
 class HictApp extends App.AppBase {

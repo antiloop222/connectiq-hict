@@ -1,8 +1,6 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 
-// Activity type
-var activityType = 0;
 var exerciseDuration = 30;
 
 //! Application

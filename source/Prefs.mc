@@ -3,6 +3,23 @@ using Toybox.Application as App;
 //! Preferences utility.
 module Prefs {
 
+    //! Store activity type
+    function setActivityType(type) {
+        App.getApp().setProperty(ACTIVITY_TYPE, type);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: activity type set to " + type);
+        }
+    }
+
+    //! Get activity type
+    function getActivityType() {
+        var type = getNumber(ACTIVITY_TYPE, 0, 0, 999);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: activity type value is " + type);
+        }
+        return type;
+    }
+
     //! Return the number value for a preference, or the given default value if pref
     //! does not exist, is invalid, is less than the min or is greater than the max.
     //! @param name the name of the preference
@@ -34,4 +51,6 @@ module Prefs {
         return pref;
     }
 
+    hidden const ACTIVITY_TYPE = "ActivityType";
+    hidden const EXERCISE_DURATION = "ExerTime";
 }

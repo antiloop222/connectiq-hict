@@ -83,11 +83,12 @@ class HictView extends Ui.View {
 
     //! Start the activity
     function startActivity() {
-        loadPreferences();
-
         if (Log.isDebugEnabled()) {
             Log.debug("Starting activity");
         }
+
+        // Load activity preference values
+        loadPreferences();
 
         // Start activity recording
         if (Toybox has :ActivityRecording) {
@@ -342,12 +343,8 @@ class HictView extends Ui.View {
             Log.debug("Preference: rest time: " + restDelay);
         }
 
-        activityType = Prefs.getNumber("activityType", 0, 0, 999);
-        if (Log.isDebugEnabled()) {
-            Log.debug("Preference: activity type: " + activityType);
-        }
+        activityType = Prefs.getActivityType();
     }
-
 
     hidden function drawMainTextLabel(view) {
         if (running) {
@@ -456,6 +453,8 @@ class HictView extends Ui.View {
     // Temperature value, if available
     hidden var temperature = 0;
 
+    // Activity type
+    hidden var activityType = 0;
     // Pause delay
     hidden var restDelay = 10;
 

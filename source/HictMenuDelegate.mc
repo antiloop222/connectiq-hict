@@ -26,21 +26,14 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: Cardio");
             }
-            setActivityType(0);
+            Prefs.setActivityType(0);
         }
         if (item == :Strength) {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: Strength");
             }
-            setActivityType(1);
+            Prefs.setActivityType(1);
         }
     }
 
-    function setActivityType(type) {
-        activityType = type;
-
-        // Save to pref store
-        var app = App.getApp();
-        app.setProperty("activityType", type);
-    }
 }

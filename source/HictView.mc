@@ -334,12 +334,7 @@ class HictView extends Ui.View {
     //! This can be called from the app when the settings have changed.
     function loadPreferences() {
         exerciseDelay = Prefs.getExerciseDuration();
-
-        restDelay = Prefs.getNumber("restTime", 10, 10, 9999);
-        if (Log.isDebugEnabled()) {
-            Log.debug("Preference: rest time: " + restDelay);
-        }
-
+        restDelay = Prefs.getRestDuration();
         activityType = Prefs.getActivityType();
     }
 

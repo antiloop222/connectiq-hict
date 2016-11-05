@@ -30,9 +30,26 @@ module Prefs {
 
     //! Get exercise duration
     function getExerciseDuration() {
-        var duration = getNumber(EXERCISE_DURATION, 30, 0, 999);
+        var duration = getNumber(EXERCISE_DURATION, 30, 10, 999);
         if (Log.isDebugEnabled()) {
             Log.debug("Prefs: exercise duration value is " + duration);
+        }
+        return duration;
+    }
+
+    //! Store rest duration
+    function setRestDuration(duration) {
+        App.getApp().setProperty(REST_DURATION, duration);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: rest duration set to " + duration);
+        }
+    }
+
+    //! Get rest duration
+    function getRestDuration() {
+        var duration = getNumber(REST_DURATION, 10, 10, 999);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: rest duration value is " + duration);
         }
         return duration;
     }
@@ -68,6 +85,8 @@ module Prefs {
         return pref;
     }
 
-    hidden const ACTIVITY_TYPE = "ActivityType";
-    hidden const EXERCISE_DURATION = "ExerTime";
+    // Settings name, see resources/settings.xml
+    hidden const ACTIVITY_TYPE = "activityType";
+    hidden const EXERCISE_DURATION = "exerTime";
+    hidden const REST_DURATION = "restTime";
 }

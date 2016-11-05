@@ -8,6 +8,9 @@
 	<setting propertyKey="@Properties.restTime" title="@Strings.RestTimeLabel" prompt="@Strings.RestTimePrompt">
 		<settingConfig type="numeric" min="5" errorMessage="@Strings.RestTimeError" />
 	</setting>
+	<setting propertyKey="@Properties.exerCount" title="@Strings.ExerciseCountLabel" prompt="@Strings.ExerciseCountPrompt">
+		<settingConfig type="numeric" min="1" errorMessage="@Strings.ExerciseCountError" />
+	</setting>
 	<setting propertyKey="@Properties.activityType" title="@Strings.ActivityTypeLabel" prompt="@Strings.ActivityTypePrompt">
 		<settingConfig type="list" required="true">
 			<listEntry value="0">@Strings.cardio</listEntry>

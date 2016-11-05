@@ -54,6 +54,23 @@ module Prefs {
         return duration;
     }
 
+    //! Store exercise count
+    function setExerciseCount(count) {
+        App.getApp().setProperty(EXERCISE_COUNT, count);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: exercise count set to " + count);
+        }
+    }
+
+    //! Get exercise count
+    function getExerciseCount() {
+        var count = getNumber(EXERCISE_COUNT, 13, 1, 999);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: exercise count value is " + count);
+        }
+        return count;
+    }
+
     //! Return the number value for a preference, or the given default value if pref
     //! does not exist, is invalid, is less than the min or is greater than the max.
     //! @param name the name of the preference
@@ -89,4 +106,5 @@ module Prefs {
     hidden const ACTIVITY_TYPE = "activityType";
     hidden const EXERCISE_DURATION = "exerTime";
     hidden const REST_DURATION = "restTime";
+    hidden const EXERCISE_COUNT = "exerCount";
 }

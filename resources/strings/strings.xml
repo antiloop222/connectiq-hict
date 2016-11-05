@@ -12,6 +12,9 @@
 	<string id="RestTimeLabel">Rest duration (s)</string>
 	<string id="RestTimePrompt">Enter duration of rest, period in seconds</string>
 	<string id="RestTimeError">Rest duration cannot be less than 5 seconds</string>
+	<string id="ExerciseCountLabel">Exercise count</string>
+	<string id="ExerciseCountPrompt">Enter the number of exercises for the session</string>
+	<string id="ExerciseCountError">Exercise count cannot be less than 1</string>
 	<string id="ActivityTypeLabel">Activity type</string>
 	<string id="ActivityTypePrompt">Select the activity type</string>
 

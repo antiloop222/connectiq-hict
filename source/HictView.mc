@@ -281,7 +281,7 @@ class HictView extends Ui.View {
         }
 
         if (Log.isDebugEnabled()) {
-            Log.debug("New exercise: " + EXERCISES[exerciseCount-1]);
+            Log.debug("New exercise: " + EXERCISES[(exerciseCount - 1) % EXERCISES.size()]);
         }
 
         notifyEnd();
@@ -309,7 +309,7 @@ class HictView extends Ui.View {
 
         notifyEnd();
 
-        // Stop after 13 exercises
+        // Stop after maxExerciseCount exercises
         if (isDone()) {
             if (Log.isDebugEnabled()) {
                 Log.debug("Reached max exercise count");
@@ -335,6 +335,7 @@ class HictView extends Ui.View {
     function loadPreferences() {
         exerciseDelay = Prefs.getExerciseDuration();
         restDelay = Prefs.getRestDuration();
+        maxExerciseCount = Prefs.getExerciseCount();
         activityType = Prefs.getActivityType();
     }
 
@@ -343,7 +344,7 @@ class HictView extends Ui.View {
             if (resting) {
                 view.setText(exerciseCount < 1 ? Ui.loadResource(Rez.Strings.get_ready) : Ui.loadResource(Rez.Strings.rest));
             } else {
-                view.setText(EXERCISES[exerciseCount-1]);
+                view.setText(EXERCISES[(exerciseCount - 1) % EXERCISES.size()]);
             }
         } else {
             view.setText(Ui.loadResource(Rez.Strings.press_start));
@@ -352,7 +353,7 @@ class HictView extends Ui.View {
 
     hidden function drawNextExerciseLabel(view) {
         if (running) {
-            view.setText(exerciseCount < maxExerciseCount ? EXERCISES[exerciseCount] : "");
+            view.setText(exerciseCount < maxExerciseCount ? EXERCISES[exerciseCount % EXERCISES.size()] : "");
         } else {
             view.setText("");
         }
@@ -435,10 +436,8 @@ class HictView extends Ui.View {
 
     // Time for current exercise/pause period
     hidden var periodTime = 0;
-    // Exercise number now playing (1 to 13)
+    // Exercise number now playing (1 to maxExerciseCount)
     hidden var exerciseCount = 0;
-    // Max number of exercises
-    hidden var maxExerciseCount = 13;
 
     // Heart rate value, if available
     hidden var heartRate = 0;
@@ -447,6 +446,8 @@ class HictView extends Ui.View {
 
     // Activity type
     hidden var activityType = 0;
+    // Max number of exercises
+    hidden var maxExerciseCount = 13;
     // Exercise delay
     hidden var exerciseDelay = 30;
     // Pause delay

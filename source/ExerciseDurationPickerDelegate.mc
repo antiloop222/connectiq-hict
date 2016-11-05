@@ -1,4 +1,3 @@
-using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 
 class ExerciseDurationPickerDelegate extends Ui.NumberPickerDelegate {

@@ -16,6 +16,13 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
             Ui.pushView(new Ui.NumberPicker(Ui.NUMBER_PICKER_TIME_MIN_SEC, new Time.Duration(30)),
                 new ExerciseDurationPickerDelegate(), Ui.SLIDE_LEFT);
         }
+        if (item == :RestDuration) {
+            if (Log.isDebugEnabled()) {
+                Log.debug("Menu item: RestDuration");
+            }
+            Ui.pushView(new Ui.NumberPicker(Ui.NUMBER_PICKER_TIME_MIN_SEC, new Time.Duration(10)),
+                new RestDurationPickerDelegate(), Ui.SLIDE_LEFT);
+        }
         if (item == :ActivityType) {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: ActivityType");

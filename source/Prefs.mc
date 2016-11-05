@@ -20,6 +20,23 @@ module Prefs {
         return type;
     }
 
+    //! Store exercise duration
+    function setExerciseDuration(duration) {
+        App.getApp().setProperty(EXERCISE_DURATION, duration);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: exercise duration set to " + duration);
+        }
+    }
+
+    //! Get exercise duration
+    function getExerciseDuration() {
+        var duration = getNumber(EXERCISE_DURATION, 30, 0, 999);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: exercise duration value is " + duration);
+        }
+        return duration;
+    }
+
     //! Return the number value for a preference, or the given default value if pref
     //! does not exist, is invalid, is less than the min or is greater than the max.
     //! @param name the name of the preference

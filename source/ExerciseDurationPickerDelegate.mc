@@ -11,9 +11,6 @@ class ExerciseDurationPickerDelegate extends Ui.NumberPickerDelegate {
         if (Log.isDebugEnabled()) {
             Log.debug("Exercise duration selected: " + duration.value().toNumber());
         }
-        exerciseDuration = duration.value().toNumber();
-
-        // Save to pref store
-        App.getApp().setProperty("exerTime", exerciseDuration);
+        Prefs.setExerciseDuration(duration.value().toNumber());
     }
 }

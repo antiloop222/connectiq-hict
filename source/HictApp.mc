@@ -1,8 +1,6 @@
 using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 
-var exerciseDuration = 30;
-
 //! Application
 class HictApp extends App.AppBase {
 

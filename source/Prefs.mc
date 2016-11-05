@@ -47,7 +47,7 @@ module Prefs {
 
     //! Get rest duration
     function getRestDuration() {
-        var duration = getNumber(REST_DURATION, 10, 10, 999);
+        var duration = getNumber(REST_DURATION, 10, 5, 999);
         if (Log.isDebugEnabled()) {
             Log.debug("Prefs: rest duration value is " + duration);
         }

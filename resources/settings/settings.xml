@@ -13,8 +13,9 @@
 	</setting>
 	<setting propertyKey="@Properties.activityType" title="@Strings.ActivityTypeLabel" prompt="@Strings.ActivityTypePrompt">
 		<settingConfig type="list" required="true">
-			<listEntry value="0">@Strings.cardio</listEntry>
-			<listEntry value="1">@Strings.strength</listEntry>
+            <listEntry value="0">@Strings.sevenminutes</listEntry>
+            <listEntry value="1">@Strings.cardio</listEntry>
+			<listEntry value="2">@Strings.strength</listEntry>
 		</settingConfig>
 	</setting>
 </settings>

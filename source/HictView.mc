@@ -98,18 +98,7 @@ class HictView extends Ui.View {
             }
 
             var sessionName = Ui.loadResource(Rez.Strings.SessionLabel);
-            var type = Recording.SUB_SPORT_CARDIO_TRAINING;
-            if (activityType == 1) {
-                type = Recording.SUB_SPORT_STRENGTH_TRAINING;
-                if (Log.isDebugEnabled()) {
-                    Log.debug("Activity type: Strength");
-                }
-            } else {
-                type = Recording.SUB_SPORT_CARDIO_TRAINING;
-                if (Log.isDebugEnabled()) {
-                    Log.debug("Activity type: Cardio");
-                }
-            }
+            var type = findActivityType();
 
             session = Recording.createSession({
                 :sport=>Recording.SPORT_TRAINING,
@@ -341,11 +330,17 @@ class HictView extends Ui.View {
 
     hidden function drawMainTextLabel(view) {
         if (running) {
+            var text = "";
             if (resting) {
-                view.setText(exerciseCount < 1 ? Ui.loadResource(Rez.Strings.get_ready) : Ui.loadResource(Rez.Strings.rest));
+                text = exerciseCount < 1 ? Ui.loadResource(Rez.Strings.get_ready) : Ui.loadResource(Rez.Strings.rest);
             } else {
-                view.setText(EXERCISES[(exerciseCount - 1) % EXERCISES.size()]);
+                if (isSevenMinuteTraining()) {
+                    text = EXERCISES[(exerciseCount - 1) % EXERCISES.size()];
+                } else {
+                    text = Ui.loadResource(Rez.Strings.exercise) + " #" + exerciseCount;
+                }
             }
+            view.setText(text);
         } else {
             view.setText(Ui.loadResource(Rez.Strings.press_start));
         }
@@ -353,7 +348,13 @@ class HictView extends Ui.View {
 
     hidden function drawNextExerciseLabel(view) {
         if (running) {
-            view.setText(exerciseCount < maxExerciseCount ? EXERCISES[exerciseCount % EXERCISES.size()] : "");
+            var text = "";
+            if (isSevenMinuteTraining()) {
+                text = exerciseCount < maxExerciseCount ? EXERCISES[exerciseCount % EXERCISES.size()] : "";
+            } else {
+                text = Ui.loadResource(Rez.Strings.exercise) + " #" + (exerciseCount + 1);
+            }
+            view.setText(text);
         } else {
             view.setText("");
         }
@@ -390,6 +391,28 @@ class HictView extends Ui.View {
         } else {
             view.setText(Ui.loadResource(Rez.Strings.no_value));
         }
+    }
+
+    hidden function isSevenMinuteTraining() {
+        return (activityType == Prefs.SEVEN);
+    }
+
+    hidden function findActivityType() {
+        var type = Recording.SUB_SPORT_CARDIO_TRAINING;
+        if (activityType == Prefs.STRENGTH) {
+            // Strength training
+            type = Recording.SUB_SPORT_STRENGTH_TRAINING;
+            if (Log.isDebugEnabled()) {
+                Log.debug("Activity type: Strength");
+            }
+        } else {
+            // Seven minutes or cardio training
+            type = Recording.SUB_SPORT_CARDIO_TRAINING;
+            if (Log.isDebugEnabled()) {
+                Log.debug("Activity type: Cardio");
+            }
+        }
+        return type;
     }
 
     //! Format number with 2 digits

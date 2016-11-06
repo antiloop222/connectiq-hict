@@ -22,10 +22,12 @@
 	<string id="get_ready">Préparez-vous</string>
 	<string id="rest">Repos</string>
 	<string id="stop_session">Arrêter la session ?</string>
+	<string id="sevenminutes">7 Minutes</string>
 	<string id="cardio">Cardio</string>
 	<string id="strength">Musculation</string>
 
 	<!-- Keep exercise name less than 20 characters -->
+	<string id="exercise">Exercice</string>
 	<string id="exercise1">Jumping jacks</string>
 	<string id="exercise2">Chaise (dos au mur)</string>
 	<string id="exercise3">Pompes</string>

@@ -3,6 +3,12 @@ using Toybox.Application as App;
 //! Preferences utility.
 module Prefs {
 
+    enum {
+        SEVEN = 0,
+        CARDIO = 1,
+        STRENGTH = 2
+    }
+
     //! Store activity type
     function setActivityType(type) {
         App.getApp().setProperty(ACTIVITY_TYPE, type);

@@ -23,12 +23,12 @@
 	<string id="get_ready">Get ready</string>
 	<string id="rest">Rest</string>
 	<string id="stop_session">Stop session?</string>
-    <string id="sevenminutes">7-Minute</string>
+	<string id="sevenminutes">7-Minute</string>
 	<string id="cardio">Cardio</string>
 	<string id="strength">Strength</string>
 
 	<!-- Keep exercise name less than 20 characters -->
-    <string id="exercise">Exercise</string>
+	<string id="exercise">Exercise</string>
 	<string id="exercise1">Jumping jacks</string>
 	<string id="exercise2">Wall sit</string>
 	<string id="exercise3">Push-up</string>

@@ -1,15 +1,22 @@
 using Toybox.WatchUi as Ui;
 
-class RestDurationPickerDelegate extends Ui.NumberPickerDelegate {
+class RestDurationPickerDelegate extends Ui.PickerDelegate {
 
     function initialize() {
-        NumberPickerDelegate.initialize();
+        PickerDelegate.initialize();
     }
 
-    function onNumberPicked(duration) {
+    function onCancel() {
+        Ui.popView(Ui.SLIDE_IMMEDIATE);
+    }
+
+    function onAccept(values) {
+        var duration = values[0];
         if (Log.isDebugEnabled()) {
-            Log.debug("Rest duration selected: " + duration.value().toNumber());
+            Log.debug("Rest duration selected: " + duration);
         }
-        Prefs.setRestDuration(duration.value().toNumber());
+        Prefs.setRestDuration(duration);
+
+        Ui.popView(Ui.SLIDE_IMMEDIATE);
     }
 }

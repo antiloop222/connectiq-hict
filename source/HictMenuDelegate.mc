@@ -14,14 +14,14 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: ExerciseDuration");
             }
-            Ui.pushView(new Ui.NumberPicker(Ui.NUMBER_PICKER_TIME_MIN_SEC, new Time.Duration(Prefs.getExerciseDuration())),
+            Ui.pushView(new SingleNumberPicker(Rez.Strings.ExerciseTimeLabel, Prefs.getExerciseDuration()),
                 new ExerciseDurationPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
         if (item == :RestDuration) {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: RestDuration");
             }
-            Ui.pushView(new Ui.NumberPicker(Ui.NUMBER_PICKER_TIME_MIN_SEC, new Time.Duration(Prefs.getRestDuration())),
+            Ui.pushView(new SingleNumberPicker(Rez.Strings.RestTimeLabel, Prefs.getRestDuration()),
                 new RestDurationPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
         if (item == :ExerciseCount) {

@@ -14,21 +14,21 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: ExerciseDuration");
             }
-            Ui.pushView(new SingleNumberPicker(Rez.Strings.ExerciseTimeLabel, Prefs.getExerciseDuration()),
+            Ui.pushView(new SingleNumberPicker(Rez.Strings.ExerciseTimeLabel, Prefs.getExerciseDuration(), 10, 99),
                 new ExerciseDurationPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
         if (item == :RestDuration) {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: RestDuration");
             }
-            Ui.pushView(new SingleNumberPicker(Rez.Strings.RestTimeLabel, Prefs.getRestDuration()),
+            Ui.pushView(new SingleNumberPicker(Rez.Strings.RestTimeLabel, Prefs.getRestDuration(), 5, 99),
                 new RestDurationPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
         if (item == :ExerciseCount) {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: ExerciseCount");
             }
-            Ui.pushView(new SingleNumberPicker(Rez.Strings.ExerciseCountLabel, Prefs.getExerciseCount()),
+            Ui.pushView(new SingleNumberPicker(Rez.Strings.ExerciseCountLabel, Prefs.getExerciseCount(), 1, 99),
                 new ExerciseCountPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
         if (item == :ActivityType) {

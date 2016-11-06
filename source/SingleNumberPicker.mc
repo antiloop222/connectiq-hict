@@ -12,10 +12,4 @@ class SingleNumberPicker extends Ui.Picker {
         }
         Picker.initialize({:title=>title, :defaults=>[index], :pattern=>[factory]});
     }
-
-    function onUpdate(dc) {
-        dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_BLACK);
-        dc.clear();
-        Picker.onUpdate(dc);
-    }
 }

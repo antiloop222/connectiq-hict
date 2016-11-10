@@ -7,18 +7,35 @@
 This watch application drives you through the execution of 13 exercises as described in the article from ACSM'S Health & Fitness Journal:
 _[High-Intensity Circuit Training Using Body Weight: Maximum Results With Minimal Investment](http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx)_.
 
-The watch displays a timer for the 30-second exercises followed by 10-second rest period. Duration of exercise and rest periods is configurable through Garmin Connect Mobile.
+The watch displays a timer for the 30-second exercises followed by 10-second rest period.
+Number of exercises and duration of and rest periods are configurable on the watch menu or through Garmin Connect Mobile.
+A long vibration will trigger at the beginning and at the end of each exercise.
+A short vibration will trigger every 10 seconds during the exercise.
+Sound notification is not supported.
+
+Three activity types are available:
+
+ - 7-minute workout: 13 exercises from HICT program are repeated, activity is saved as cardio training
+ - Cardio: activity is saved as cardio training
+ - Strength: activity is saved as strength training
 
 The application supports heart-rate monitor (HRM) and temperature sensor (Tempe).
 
-If you achieve at least 6 exercises, the activity is recorded as a training activity in your Garmin profile.
+Use the menu button to configure:
+
+ - Activity type
+ - Number of exercises
+ - Duration of exercise, in seconds
+ - Duration of rest period, in seconds
+
+If you achieve at least half of the session, the activity is recorded in your Garmin profile.
 
 The activity in your Garmin profile will include basic information such as date, time, total activity time.
 
- * Each exercise and rest period corresponds to a lap.
- * Heart-rate graph if a heart-rate monitor is used.
- * Temperature graph if a temperature sensor is used.
- * Calories will be automatically calculated if a heart-rate monitor is used.
+ - Each exercise and rest period corresponds to a lap.
+ - Heart-rate graph is included if a heart-rate monitor is used.
+ - Temperature graph is included if a temperature sensor is used.
+ - Calories will be automatically calculated if and only if a heart-rate monitor is used.
 
 ![Capture](dist/images/capture1.png)
 ![Capture](dist/images/capture4.png)
@@ -49,6 +66,13 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.10 - 2016-11-10
+
+* Add menu to configure settings directly from the watch.
+* Add configuration for number of exercises.
+* Add configurable activity type: 7-minute, cardio training or strength training.
+* Upgrade to Connect IQ SDK 2.1.5.
 
 ### v.1.9 - 2016-10-15
 

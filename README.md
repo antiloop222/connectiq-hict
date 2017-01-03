@@ -53,7 +53,7 @@ Please submit questions, issues and enhancement requests on this project's [issu
 
 Supported languages: Danish, English, French.
 
-Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 735XT, 630, 235, 230, fēnix® 3, fēnix® 3 HR.
+Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 735XT, 630, 235, 230, fēnix® 3, fēnix® 3 HR, fēnix® Chronos.
 
 ## Development ##
 
@@ -69,7 +69,7 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ### v.1.xx - 2017-01-xx
 
-* Added support for Forerunner® 735XT.
+* Added support for Forerunner® 735XT, fēnix® Chronos.
 * Upgrade to Connect IQ SDK 2.2.2.
 
 ### v.1.10 - 2016-11-10

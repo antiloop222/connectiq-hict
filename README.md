@@ -7,8 +7,9 @@
 This watch application drives you through the execution of 13 exercises as described in the article from ACSM'S Health & Fitness Journal:
 _[High-Intensity Circuit Training Using Body Weight: Maximum Results With Minimal Investment](http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx)_.
 
-The watch displays a timer for the 30-second exercises followed by 10-second rest period.
-Number of exercises and duration of and rest periods are configurable on the watch menu or through Garmin Connect Mobile.
+The watch displays a timer for the 30-second exercises followed by 10-second rest period (configurable).
+
+Number of exercises, duration of exercises and rest periods are configurable on the watch menu or through Garmin Connect Mobile.
 A long vibration will trigger at the beginning and at the end of each exercise.
 A short vibration will trigger every 10 seconds during the exercise.
 Sound notification is not supported.
@@ -67,7 +68,7 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 7-min is tested on Garmin vívoactive®.
 
-### v.1.xx - 2017-01-xx
+### v.1.11 - 2017-01-03
 
 * Added support for Forerunner® 735XT, fēnix® Chronos.
 * Upgrade to Connect IQ SDK 2.2.2.

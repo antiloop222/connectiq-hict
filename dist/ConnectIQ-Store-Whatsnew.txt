@@ -1,3 +1,8 @@
+v.1.11 - 2017-01-03
+
+- Added support for Forerunner® 735XT, fēnix® Chronos.
+- Upgrade to Connect IQ SDK 2.2.2.
+
 v.1.10 - 2016-11-10
 
 - Add menu to configure settings directly from the watch.

@@ -28,6 +28,7 @@ Use the menu button to configure:
  - Number of exercises
  - Duration of exercise, in seconds
  - Duration of rest period, in seconds
+ - Notification policy: none, start and end, every 10 seconds
 
 If you achieve at least half of the session, the activity is recorded in your Garmin profile.
 
@@ -67,6 +68,13 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.xx - 2017-xx-xx
+
+* Add notification policy: none, start and end, every 10 seconds.
+* Add tone notifications.
+* Add backlight on notification.
+* Add configuration for vibration and tone notifications.
 
 ### v.1.11 - 2017-01-03
 

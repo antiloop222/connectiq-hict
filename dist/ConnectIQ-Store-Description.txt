@@ -23,6 +23,7 @@ Use the menu button to configure:
  - Number of exercises
  - Duration of exercise, in seconds
  - Duration of rest period, in seconds
+ - Notification policy: none, start and end, every 10 seconds
 
 If you achieve at least half of the session, the activity is recorded in your Garmin profile.
 

@@ -273,6 +273,7 @@ class HictView extends Ui.View {
             Log.debug("New exercise: " + EXERCISES[(exerciseCount - 1) % EXERCISES.size()]);
         }
 
+        turnOnBacklight();
         if (notificationPolicy != Prefs.POLICY_NONE) {
             notifyEnd();
         }
@@ -298,6 +299,7 @@ class HictView extends Ui.View {
             Log.debug("Rest period");
         }
 
+        turnOnBacklight();
         if (notificationPolicy != Prefs.POLICY_NONE) {
             notifyEnd();
         }
@@ -312,6 +314,7 @@ class HictView extends Ui.View {
     }
 
     hidden function notifyEnd() {
+        turnOnBacklight();
         if (allowTone) {
             Attention.playTone(Attention.TONE_STOP);
         }
@@ -323,6 +326,7 @@ class HictView extends Ui.View {
     }
 
     hidden function notifyShort() {
+        turnOnBacklight();
         if (allowTone) {
             Attention.playTone(Attention.TONE_INTERVAL_ALERT);
         }
@@ -330,6 +334,29 @@ class HictView extends Ui.View {
             Attention.vibrate([
                 new Attention.VibeProfile(100, 400)
             ]);
+        }
+    }
+
+    //! Turn on backlight.
+    //! Trigger a timer to turn off backlight after 3 seconds.
+    function turnOnBacklight() {
+        if (backlightTimer == null) {
+            backlight(true);
+            backlightTimer = new Timer.Timer();
+            backlightTimer.start(method(:onBacklightTimer), 3000, false);
+        }
+    }
+
+    //! Action on backlight timer, turn off backlight and invalidate timer.
+    function onBacklightTimer() {
+        backlight(false);
+        backlightTimer = null;
+    }
+
+    //! Turn on/off backlight based on given flag.
+    hidden function backlight(on) {
+        if (Attention has :backlight) {
+            Attention.backlight(on);
         }
     }
 
@@ -473,6 +500,8 @@ class HictView extends Ui.View {
     hidden var session = null;
     // Activity timer
     hidden var timer = null;
+    // Backlight timer
+    hidden var backlightTimer = null;
 
     // Time for current exercise/pause period
     hidden var periodTime = 0;

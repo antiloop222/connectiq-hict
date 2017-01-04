@@ -214,8 +214,7 @@ class HictView extends Ui.View {
                     // Switch to rest
                     switchToRest();
                 } else {
-                    if (periodTime % 10 == 0) {
-                        // Short vibration
+                    if (notificationPolicy == Prefs.POLICY_EVERY_10 && periodTime % 10 == 0) {
                         notifyShort();
                     }
                 }
@@ -274,7 +273,9 @@ class HictView extends Ui.View {
             Log.debug("New exercise: " + EXERCISES[(exerciseCount - 1) % EXERCISES.size()]);
         }
 
-        notifyEnd();
+        if (notificationPolicy != Prefs.POLICY_NONE) {
+            notifyEnd();
+        }
     }
 
     hidden function switchToRest() {
@@ -297,7 +298,9 @@ class HictView extends Ui.View {
             Log.debug("Rest period");
         }
 
-        notifyEnd();
+        if (notificationPolicy != Prefs.POLICY_NONE) {
+            notifyEnd();
+        }
 
         // Stop after maxExerciseCount exercises
         if (isDone()) {
@@ -337,6 +340,7 @@ class HictView extends Ui.View {
         restDelay = Prefs.getRestDuration();
         maxExerciseCount = Prefs.getExerciseCount();
         activityType = Prefs.getActivityType();
+        notificationPolicy = Prefs.getNotificationPolicy();
         allowVibration = (Attention has :vibrate) && (Sys.getDeviceSettings().vibrateOn) && (Prefs.isAllowVibration());
         allowTone = (Attention has :playTone) && (Sys.getDeviceSettings().tonesOn) && (Prefs.isAllowTone());
     }
@@ -488,6 +492,8 @@ class HictView extends Ui.View {
     hidden var exerciseDelay = 30;
     // Pause delay
     hidden var restDelay = 10;
+    // Notification policy
+    hidden var notificationPolicy = Prefs.POLICY_EVERY_10;
     // Allow vibration
     hidden var allowVibration = true;
     // Allow tone

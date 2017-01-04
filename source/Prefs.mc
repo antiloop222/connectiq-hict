@@ -95,13 +95,30 @@ module Prefs {
         return value;
     }
 
+    //! Get the notification policy
+    function getNotificationPolicy() {
+        var value = getNotificationPolicyPref();
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: notification policy value is " + value);
+        }
+        return value;
+    }
+
+    //! List of notification policies
+    enum {
+        POLICY_NONE = 0,
+        POLICY_START_END = 1,
+        POLICY_EVERY_10 = 2
+    }
+
+
     //! Return the number value for a preference, or the given default value if pref
     //! does not exist, is invalid, is less than the min or is greater than the max.
     //! @param name the name of the preference
     //! @param def the default value if preference value cannot be found
     //! @param min the minimum authorized value for the preference
     //! @param max the maximum authorized value for the preference
-    function getNumber(name, def, min, max) {
+    hidden function getNumber(name, def, min, max) {
         var app = App.getApp();
         var pref = def;
 
@@ -154,6 +171,34 @@ module Prefs {
         return pref;
     }
 
+    hidden function getNotificationPolicyPref() {
+        var app = App.getApp();
+        var def = POLICY_EVERY_10;
+
+        if (app != null) {
+            var pref = app.getProperty(NOTIF_POLICY);
+            if (pref != null) {
+                // GCM returns value as string!
+                if (pref instanceof Toybox.Lang.String && pref != "") {
+                    try {
+                        pref = pref.toNumber();
+                    } catch(ex1) {
+                        return def;
+                    }
+                }
+
+                if (pref == 0) {
+                    return POLICY_NONE;
+                } else if (pref == 1) {
+                    return POLICY_START_END;
+                }
+            }
+        }
+
+        // Default
+        return def;
+    }
+
     // Settings name, see resources/settings.xml
     hidden const ACTIVITY_TYPE = "activityType";
     hidden const EXERCISE_DURATION = "exerTime";
@@ -161,4 +206,5 @@ module Prefs {
     hidden const EXERCISE_COUNT = "exerCount";
     hidden const ALLOW_VIBRATION = "allowVibration";
     hidden const ALLOW_TONE = "allowTone";
+    hidden const NOTIF_POLICY = "notifPolicy";
 }

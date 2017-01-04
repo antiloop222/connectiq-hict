@@ -3,10 +3,18 @@ using Toybox.Application as App;
 //! Preferences utility.
 module Prefs {
 
+    //! List of activity types
     enum {
         SEVEN = 0,
         CARDIO = 1,
         STRENGTH = 2
+    }
+
+    //! List of notification policies
+    enum {
+        POLICY_NONE = 0,
+        POLICY_START_END = 1,
+        POLICY_EVERY_10 = 2
     }
 
     //! Store activity type
@@ -104,11 +112,12 @@ module Prefs {
         return value;
     }
 
-    //! List of notification policies
-    enum {
-        POLICY_NONE = 0,
-        POLICY_START_END = 1,
-        POLICY_EVERY_10 = 2
+    //! Store notification policy
+    function setNotificationPolicy(policy) {
+        App.getApp().setProperty(NOTIF_POLICY, policy);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: notification policy set to " + policy);
+        }
     }
 
 

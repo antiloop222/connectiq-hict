@@ -37,6 +37,12 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
             }
             Ui.pushView(new Rez.Menus.ActivityTypeMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
         }
+        if (item == :NotifPolicy) {
+            if (Log.isDebugEnabled()) {
+                Log.debug("Menu item: NotifPolicy");
+            }
+            Ui.pushView(new Rez.Menus.NotifPolicyMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
+        }
 
         // Activity type
         if (item == :Seven) {
@@ -56,6 +62,26 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
                 Log.debug("Menu item: Strength");
             }
             Prefs.setActivityType(Prefs.STRENGTH);
+        }
+
+        // Notification policy
+        if (item == :Policy0) {
+            if (Log.isDebugEnabled()) {
+                Log.debug("Menu item: Policy 0");
+            }
+            Prefs.setNotificationPolicy(Prefs.POLICY_NONE);
+        }
+        if (item == :Policy1) {
+            if (Log.isDebugEnabled()) {
+                Log.debug("Menu item: Policy 1");
+            }
+            Prefs.setNotificationPolicy(Prefs.POLICY_START_END);
+        }
+        if (item == :Policy2) {
+            if (Log.isDebugEnabled()) {
+                Log.debug("Menu item: Policy 2");
+            }
+            Prefs.setNotificationPolicy(Prefs.POLICY_EVERY_10);
         }
     }
 

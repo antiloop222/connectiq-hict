@@ -86,6 +86,15 @@ module Prefs {
         return value;
     }
 
+    //! Return true if tones are allowed
+    function isAllowTone() {
+        var value = getBoolean(ALLOW_TONE, false);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: allow tone value is " + value);
+        }
+        return value;
+    }
+
     //! Return the number value for a preference, or the given default value if pref
     //! does not exist, is invalid, is less than the min or is greater than the max.
     //! @param name the name of the preference
@@ -151,4 +160,5 @@ module Prefs {
     hidden const REST_DURATION = "restTime";
     hidden const EXERCISE_COUNT = "exerCount";
     hidden const ALLOW_VIBRATION = "allowVibration";
+    hidden const ALLOW_TONE = "allowTone";
 }

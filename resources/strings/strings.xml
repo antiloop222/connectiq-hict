@@ -17,7 +17,8 @@
 	<string id="ExerciseCountError">Exercise count cannot be less than 1</string>
 	<string id="ActivityTypeLabel">Activity type</string>
 	<string id="ActivityTypePrompt">Select the activity type</string>
-	<string id="AllowVibrationLabel">Use vibration</string>
+	<string id="AllowVibrationLabel">Allow vibrations</string>
+	<string id="AllowToneLabel">Allow sound notifications</string>
 
 	<string id="press_start">Press start</string>
 	<string id="no_value">--</string>

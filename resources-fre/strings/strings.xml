@@ -16,7 +16,8 @@
 	<string id="ExerciseCountError">Le nombre d'exercices ne peut pas être inférieur à 1</string>
 	<string id="ActivityTypeLabel">Type d'activité</string>
 	<string id="ActivityTypePrompt">Sélectionner le type d'activité</string>
-	<string id="AllowVibrationLabel">Notifier par vibreur</string>
+	<string id="AllowVibrationLabel">Notification par vibration</string>
+	<string id="AllowToneLabel">Notification sonore</string>
 
 	<string id="press_start">App. sur Démarrer</string>
 	<string id="no_value">--</string>

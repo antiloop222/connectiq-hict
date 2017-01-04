@@ -309,6 +309,9 @@ class HictView extends Ui.View {
     }
 
     hidden function notifyEnd() {
+        if (allowTone) {
+            Attention.playTone(Attention.TONE_STOP);
+        }
         if (allowVibration) {
             Attention.vibrate([
                 new Attention.VibeProfile(100, 1000)
@@ -317,6 +320,9 @@ class HictView extends Ui.View {
     }
 
     hidden function notifyShort() {
+        if (allowTone) {
+            Attention.playTone(Attention.TONE_INTERVAL_ALERT);
+        }
         if (allowVibration) {
             Attention.vibrate([
                 new Attention.VibeProfile(100, 400)
@@ -332,6 +338,7 @@ class HictView extends Ui.View {
         maxExerciseCount = Prefs.getExerciseCount();
         activityType = Prefs.getActivityType();
         allowVibration = (Attention has :vibrate) && (Sys.getDeviceSettings().vibrateOn) && (Prefs.isAllowVibration());
+        allowTone = (Attention has :playTone) && (Sys.getDeviceSettings().tonesOn) && (Prefs.isAllowTone());
     }
 
     hidden function drawMainTextLabel(view) {
@@ -483,6 +490,8 @@ class HictView extends Ui.View {
     hidden var restDelay = 10;
     // Allow vibration
     hidden var allowVibration = true;
+    // Allow tone
+    hidden var allowTone = true;
 
     hidden const TextLabel = "TextLabel";
     hidden const NextLabel = "NextLabel";

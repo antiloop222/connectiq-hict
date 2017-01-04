@@ -77,9 +77,21 @@ module Prefs {
         return count;
     }
 
+    //! Return true if vibrations are allowed
+    function isAllowVibration() {
+        var value = getBoolean(ALLOW_VIBRATION, true);
+        if (Log.isDebugEnabled()) {
+            Log.debug("Prefs: allow vibration value is " + value);
+        }
+        return value;
+    }
+
     //! Return the number value for a preference, or the given default value if pref
     //! does not exist, is invalid, is less than the min or is greater than the max.
     //! @param name the name of the preference
+    //! @param def the default value if preference value cannot be found
+    //! @param min the minimum authorized value for the preference
+    //! @param max the maximum authorized value for the preference
     function getNumber(name, def, min, max) {
         var app = App.getApp();
         var pref = def;
@@ -108,9 +120,35 @@ module Prefs {
         return pref;
     }
 
+    //! Return the boolean value for the preference
+    //! @param name the name of the preference
+    //! @param def the default value if preference value cannot be found
+    hidden function getBoolean(name, def) {
+        var app = App.getApp();
+        var pref = def;
+
+        if (app != null) {
+            pref = app.getProperty(name);
+
+            if (pref != null) {
+                if (pref instanceof Toybox.Lang.Boolean) {
+                    return pref;
+                }
+
+                if (pref == 1) {
+                    return true;
+                }
+            }
+        }
+
+        // Default
+        return pref;
+    }
+
     // Settings name, see resources/settings.xml
     hidden const ACTIVITY_TYPE = "activityType";
     hidden const EXERCISE_DURATION = "exerTime";
     hidden const REST_DURATION = "restTime";
     hidden const EXERCISE_COUNT = "exerCount";
+    hidden const ALLOW_VIBRATION = "allowVibration";
 }

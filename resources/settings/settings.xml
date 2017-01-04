@@ -18,4 +18,7 @@
 	<setting propertyKey="@Properties.restTime" title="@Strings.RestTimeLabel" prompt="@Strings.RestTimePrompt">
 		<settingConfig type="numeric" min="5" errorMessage="@Strings.RestTimeError" />
 	</setting>
+	<setting propertyKey="@Properties.allowVibration" title="@Strings.AllowVibrationLabel">
+		<settingConfig type="boolean" />
+	</setting>
 </settings>

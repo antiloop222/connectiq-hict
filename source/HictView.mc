@@ -1,5 +1,6 @@
 using Toybox.ActivityRecording as Recording;
 using Toybox.Sensor as Sensor;
+using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 
 //! Main view for application
@@ -308,15 +309,19 @@ class HictView extends Ui.View {
     }
 
     hidden function notifyEnd() {
-        Attention.vibrate([
-            new Attention.VibeProfile(100, 1000)
-        ]);
+        if (allowVibration) {
+            Attention.vibrate([
+                new Attention.VibeProfile(100, 1000)
+            ]);
+        }
     }
 
     hidden function notifyShort() {
-        Attention.vibrate([
-            new Attention.VibeProfile(100, 400)
-        ]);
+        if (allowVibration) {
+            Attention.vibrate([
+                new Attention.VibeProfile(100, 400)
+            ]);
+        }
     }
 
     //! Load preferences for the view from the object store.
@@ -326,6 +331,7 @@ class HictView extends Ui.View {
         restDelay = Prefs.getRestDuration();
         maxExerciseCount = Prefs.getExerciseCount();
         activityType = Prefs.getActivityType();
+        allowVibration = (Attention has :vibrate) && (Sys.getDeviceSettings().vibrateOn) && (Prefs.isAllowVibration());
     }
 
     hidden function drawMainTextLabel(view) {
@@ -475,6 +481,8 @@ class HictView extends Ui.View {
     hidden var exerciseDelay = 30;
     // Pause delay
     hidden var restDelay = 10;
+    // Allow vibration
+    hidden var allowVibration = true;
 
     hidden const TextLabel = "TextLabel";
     hidden const NextLabel = "NextLabel";

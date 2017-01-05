@@ -16,6 +16,10 @@
 	<string id="ExerciseCountError">Le nombre d'exercices ne peut pas être inférieur à 1</string>
 	<string id="ActivityTypeLabel">Type d'activité</string>
 	<string id="ActivityTypePrompt">Sélectionner le type d'activité</string>
+	<string id="NotifPolicyLabel">Politique de notification</string>
+	<string id="NotifPolicyPrompt">Sélectionner quand être notifier des changements d'exercice</string>
+	<string id="AllowVibrationLabel">Notification par vibration</string>
+	<string id="AllowToneLabel">Notification sonore</string>
 
 	<string id="press_start">App. sur Démarrer</string>
 	<string id="no_value">--</string>
@@ -25,6 +29,9 @@
 	<string id="sevenminutes">7 Minutes</string>
 	<string id="cardio">Cardio</string>
 	<string id="strength">Musculation</string>
+	<string id="no_notif">Aucune notification</string>
+	<string id="notif_start_end">Début et fin d'exercice</string>
+	<string id="notif_every_10s">Toutes les 10 secondes</string>
 
 	<!-- Keep exercise name less than 20 characters -->
 	<string id="exercise">Exercice</string>

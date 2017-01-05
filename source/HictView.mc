@@ -1,5 +1,6 @@
 using Toybox.ActivityRecording as Recording;
 using Toybox.Sensor as Sensor;
+using Toybox.System as Sys;
 using Toybox.WatchUi as Ui;
 
 //! Main view for application
@@ -213,8 +214,7 @@ class HictView extends Ui.View {
                     // Switch to rest
                     switchToRest();
                 } else {
-                    if (periodTime % 10 == 0) {
-                        // Short vibration
+                    if (notificationPolicy == Prefs.POLICY_EVERY_10 && periodTime % 10 == 0) {
                         notifyShort();
                     }
                 }
@@ -273,7 +273,10 @@ class HictView extends Ui.View {
             Log.debug("New exercise: " + EXERCISES[(exerciseCount - 1) % EXERCISES.size()]);
         }
 
-        notifyEnd();
+        turnOnBacklight();
+        if (notificationPolicy != Prefs.POLICY_NONE) {
+            notifyEnd();
+        }
     }
 
     hidden function switchToRest() {
@@ -296,7 +299,10 @@ class HictView extends Ui.View {
             Log.debug("Rest period");
         }
 
-        notifyEnd();
+        turnOnBacklight();
+        if (notificationPolicy != Prefs.POLICY_NONE) {
+            notifyEnd();
+        }
 
         // Stop after maxExerciseCount exercises
         if (isDone()) {
@@ -308,15 +314,50 @@ class HictView extends Ui.View {
     }
 
     hidden function notifyEnd() {
-        Attention.vibrate([
-            new Attention.VibeProfile(100, 1000)
-        ]);
+        turnOnBacklight();
+        if (allowTone) {
+            Attention.playTone(Attention.TONE_STOP);
+        }
+        if (allowVibration) {
+            Attention.vibrate([
+                new Attention.VibeProfile(100, 1000)
+            ]);
+        }
     }
 
     hidden function notifyShort() {
-        Attention.vibrate([
-            new Attention.VibeProfile(100, 400)
-        ]);
+        turnOnBacklight();
+        if (allowTone) {
+            Attention.playTone(Attention.TONE_INTERVAL_ALERT);
+        }
+        if (allowVibration) {
+            Attention.vibrate([
+                new Attention.VibeProfile(100, 400)
+            ]);
+        }
+    }
+
+    //! Turn on backlight.
+    //! Trigger a timer to turn off backlight after 3 seconds.
+    function turnOnBacklight() {
+        if (backlightTimer == null) {
+            backlight(true);
+            backlightTimer = new Timer.Timer();
+            backlightTimer.start(method(:onBacklightTimer), 3000, false);
+        }
+    }
+
+    //! Action on backlight timer, turn off backlight and invalidate timer.
+    function onBacklightTimer() {
+        backlight(false);
+        backlightTimer = null;
+    }
+
+    //! Turn on/off backlight based on given flag.
+    hidden function backlight(on) {
+        if (Attention has :backlight) {
+            Attention.backlight(on);
+        }
     }
 
     //! Load preferences for the view from the object store.
@@ -326,6 +367,9 @@ class HictView extends Ui.View {
         restDelay = Prefs.getRestDuration();
         maxExerciseCount = Prefs.getExerciseCount();
         activityType = Prefs.getActivityType();
+        notificationPolicy = Prefs.getNotificationPolicy();
+        allowVibration = (Attention has :vibrate) && (Sys.getDeviceSettings().vibrateOn) && (Prefs.isAllowVibration());
+        allowTone = (Attention has :playTone) && (Sys.getDeviceSettings().tonesOn) && (Prefs.isAllowTone());
     }
 
     hidden function drawMainTextLabel(view) {
@@ -456,6 +500,8 @@ class HictView extends Ui.View {
     hidden var session = null;
     // Activity timer
     hidden var timer = null;
+    // Backlight timer
+    hidden var backlightTimer = null;
 
     // Time for current exercise/pause period
     hidden var periodTime = 0;
@@ -475,6 +521,12 @@ class HictView extends Ui.View {
     hidden var exerciseDelay = 30;
     // Pause delay
     hidden var restDelay = 10;
+    // Notification policy
+    hidden var notificationPolicy = Prefs.POLICY_EVERY_10;
+    // Allow vibration
+    hidden var allowVibration = true;
+    // Allow tone
+    hidden var allowTone = true;
 
     hidden const TextLabel = "TextLabel";
     hidden const NextLabel = "NextLabel";

@@ -381,7 +381,7 @@ class HictView extends Ui.View {
                 if (isSevenMinuteTraining()) {
                     text = EXERCISES[(exerciseCount - 1) % EXERCISES.size()];
                 } else {
-                    text = Ui.loadResource(Rez.Strings.exercise) + " #" + exerciseCount;
+                    text = Ui.loadResource(Rez.Strings.exercise) + exerciseCount;
                 }
             }
             view.setText(text);
@@ -396,7 +396,7 @@ class HictView extends Ui.View {
             if (isSevenMinuteTraining()) {
                 text = exerciseCount < maxExerciseCount ? EXERCISES[exerciseCount % EXERCISES.size()] : "";
             } else {
-                text = Ui.loadResource(Rez.Strings.exercise) + " #" + (exerciseCount + 1);
+                text = Ui.loadResource(Rez.Strings.exercise) + (exerciseCount + 1);
             }
             view.setText(text);
         } else {

@@ -34,7 +34,7 @@
 	<string id="notif_every_10s">Toutes les 10 secondes</string>
 
 	<!-- Keep exercise name less than 20 characters -->
-	<string id="exercise">Exercice</string>
+	<string id="exercise">Exercice n°</string>
 	<string id="exercise1">Jumping jacks</string>
 	<string id="exercise2">Chaise (dos au mur)</string>
 	<string id="exercise3">Pompes</string>

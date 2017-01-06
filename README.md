@@ -69,16 +69,17 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 7-min is tested on Garmin vívoactive®.
 
-### v.1.xx - 2017-xx-xx
+### v.1.12 - 2017-01-06
 
 * Add notification policy: none, start and end, every 10 seconds.
 * Add tone notifications.
 * Add backlight on notification.
 * Add configuration for vibration and tone notifications.
+* Upgrade to Connect IQ SDK 2.2.3.
 
 ### v.1.11 - 2017-01-03
 
-* Added support for Forerunner® 735XT, fēnix® Chronos.
+* Add support for Forerunner® 735XT, fēnix® Chronos.
 * Upgrade to Connect IQ SDK 2.2.2.
 
 ### v.1.10 - 2016-11-10

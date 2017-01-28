@@ -7,7 +7,8 @@ module Prefs {
     enum {
         SEVEN = 0,
         CARDIO = 1,
-        STRENGTH = 2
+        STRENGTH = 2,
+        FLEXIBILITY = 3
     }
 
     //! List of notification policies

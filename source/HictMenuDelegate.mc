@@ -63,6 +63,12 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
             }
             Prefs.setActivityType(Prefs.STRENGTH);
         }
+        if (item == :Flexibility) {
+            if (Log.isDebugEnabled()) {
+                Log.debug("Menu item: Flexibility");
+            }
+            Prefs.setActivityType(Prefs.FLEXIBILITY);
+        }
 
         // Notification policy
         if (item == :Policy0) {

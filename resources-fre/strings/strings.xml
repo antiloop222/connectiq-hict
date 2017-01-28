@@ -29,6 +29,7 @@
 	<string id="sevenminutes">7 Minutes</string>
 	<string id="cardio">Cardio</string>
 	<string id="strength">Musculation</string>
+	<string id="flexibility">Souplesse</string>
 	<string id="no_notif">Aucune notification</string>
 	<string id="notif_start_end">Début et fin d'exercice</string>
 	<string id="notif_every_10s">Toutes les 10 secondes</string>

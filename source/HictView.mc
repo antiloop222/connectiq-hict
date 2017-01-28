@@ -449,6 +449,12 @@ class HictView extends Ui.View {
             if (Log.isDebugEnabled()) {
                 Log.debug("Activity type: Strength");
             }
+        } else if (activityType == Prefs.FLEXIBILITY) {
+            // Flexibility training
+            type = Recording.SUB_SPORT_FLEXIBILITY_TRAINING;
+            if (Log.isDebugEnabled()) {
+                Log.debug("Activity type: Flexibility");
+            }
         } else {
             // Seven minutes or cardio training
             type = Recording.SUB_SPORT_CARDIO_TRAINING;

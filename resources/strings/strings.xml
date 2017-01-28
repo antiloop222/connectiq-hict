@@ -30,6 +30,7 @@
 	<string id="sevenminutes">7-Minute</string>
 	<string id="cardio">Cardio</string>
 	<string id="strength">Strength</string>
+	<string id="flexibility">Flexibility</string>
 	<string id="no_notif">No notification</string>
 	<string id="notif_start_end">Exercise start and end</string>
 	<string id="notif_every_10s">Every 10 seconds</string>

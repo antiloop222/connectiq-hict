@@ -9,11 +9,12 @@ A long vibration will trigger at the beginning and at the end of each exercise.
 A short vibration will trigger every 10 seconds during the exercise.
 Sound notification is not supported.
 
-Three activity types are available:
+Four activity types are available:
 
  - 7-minute workout: 13 exercises from HICT program are repeated, activity is saved as cardio training
  - Cardio: activity is saved as cardio training
  - Strength: activity is saved as strength training
+ - Flexibility: activity is saved as flexibility training
 
 The application supports heart-rate monitor (HRM) and temperature sensor (Tempe).
 
@@ -37,8 +38,7 @@ The activity in your Garmin profile will include basic information such as date,
 == SUPPORT ==
 
 Please submit questions, issues and enhancement requests on the project site: https://bitbucket.org/obagot/connectiq-hict/issues
-Supported languages: Danish, English, French.
-Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 735XT, 630, 235, 230, fēnix® 3, fēnix® 3 HR, fēnix® Chronos.
+Supported languages: Danish, English, French, German.
 License : https://opensource.org/licenses/MIT
 
 

@@ -14,11 +14,12 @@ A long vibration will trigger at the beginning and at the end of each exercise.
 A short vibration will trigger every 10 seconds during the exercise.
 Sound notification is not supported.
 
-Three activity types are available:
+Four activity types are available:
 
  - 7-minute workout: 13 exercises from HICT program are repeated, activity is saved as cardio training
  - Cardio: activity is saved as cardio training
  - Strength: activity is saved as strength training
+ - Flexibility: activity is saved as flexibility training
 
 The application supports heart-rate monitor (HRM) and temperature sensor (Tempe).
 
@@ -53,9 +54,12 @@ Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a4
 
 Please submit questions, issues and enhancement requests on this project's [issue tracker](https://bitbucket.org/obagot/connectiq-hict/issues).
 
-Supported languages: Danish, English, French.
+Supported languages: Danish, English, French, German.
 
-Supported models: vívoactive®, vívoactive® HR, Forerunner® 920XT, 735XT, 630, 235, 230, fēnix® 3, fēnix® 3 HR, fēnix® Chronos.
+Supported models:
+* vívoactive®, vívoactive® HR,
+* Forerunner® 920XT, 735XT, 630, 235, 230,
+* fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos.
 
 ## Development ##
 
@@ -68,6 +72,13 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.13 - 2017-02-10
+
+* Add activity type: flexibility training.
+* Add German support, thanks to Mateo.
+* Add support for fēnix® 5, 5S, 5X.
+* Upgrade to Connect IQ SDK 2.2.4.
 
 ### v.1.12 - 2017-01-06
 

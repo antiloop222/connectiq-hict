@@ -54,7 +54,7 @@ Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a4
 
 Please submit questions, issues and enhancement requests on this project's [issue tracker](https://bitbucket.org/obagot/connectiq-hict/issues).
 
-Supported languages: Danish, English, French, German.
+Supported languages: Danish, English, French, German, Polish.
 
 Supported models:
 * vívoactive®, vívoactive® HR,
@@ -72,6 +72,11 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.14 - 2017-03-04
+
+* Add Polish support, thanks to Uriasz.
+* Change session name based on activity type.
 
 ### v.1.13 - 2017-02-10
 

@@ -1,8 +1,6 @@
 <strings>
 	<string id="AppName">7-min</string>
 	<string id="AppDescription">7-Minute Workout</string>
-	<!-- Session label is limited to 16 characters on vivoactive -->
-	<string id="SessionLabel">7-Min Workout</string>
 
 	<string id="AppVersionLabel">Version</string>
 	<string id="ExerciseTimeLabel">Exercise duration (s)</string>

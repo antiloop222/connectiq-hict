@@ -98,7 +98,7 @@ class HictView extends Ui.View {
                 Log.debug("Activity recording is supported, starting session");
             }
 
-            var sessionName = Ui.loadResource(Rez.Strings.SessionLabel);
+            var sessionName = findSessionName();
             var type = findActivityType();
 
             session = Recording.createSession({
@@ -439,6 +439,24 @@ class HictView extends Ui.View {
 
     hidden function isSevenMinuteTraining() {
         return (activityType == Prefs.SEVEN);
+    }
+
+    hidden function findSessionName() {
+        var name = "";
+        if (activityType == Prefs.CARDIO) {
+            // Cardio training
+            name = Ui.loadResource(Rez.Strings.cardio);
+        } else if (activityType == Prefs.STRENGTH) {
+            // Strength training
+            name = Ui.loadResource(Rez.Strings.strength);
+        } else if (activityType == Prefs.FLEXIBILITY) {
+            // Flexibility training
+            name = Ui.loadResource(Rez.Strings.flexibility);
+        } else {
+            // Seven minutes
+            name = Ui.loadResource(Rez.Strings.sevenminutes);
+        }
+        return name;
     }
 
     hidden function findActivityType() {

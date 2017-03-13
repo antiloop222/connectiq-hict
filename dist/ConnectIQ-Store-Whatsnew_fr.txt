@@ -1,0 +1,83 @@
+v.1.14 - 2017-03-04
+
+- Ajout du polonais, merci à Uriasz
+- Changement du nom de l'activité, basé sur le type d'activité
+
+v.1.13 - 2017-02-10
+
+- Ajout du type d'activité souplesse
+- Ajout de l'allemand, merci à Mateo
+- Support de fēnix® 5, 5S, 5X
+- Mise-à-jour Connect IQ SDK 2.2.4
+
+v.1.12 - 2017-01-06
+
+- Ajout de la politique de notification
+- Ajout des notifications sonores
+- Ajout du déclenchement de l'éclairage sur notification
+- Ajout de la configuration des notifications
+- Mise-à-jour Connect IQ SDK 2.2.3
+
+v.1.11 - 2017-01-03
+
+- Support de Forerunner® 735XT, fēnix® Chronos
+- Mise-à-jour Connect IQ SDK 2.2.2
+
+v.1.10 - 2016-11-10
+
+- Ajout de menus pour configurer l'application à partir de la montre
+- Ajout de la configuration du nombre d'exercices
+- Ajout de la configuration du type d'activité : 7-minute, cardio ou musculation
+- Mise-à-jour Connect IQ SDK 2.1.5
+
+v.1.9 - 2016-10-15
+
+- Changement du type d'activité de Cardio à Musculation
+- Mise-à-jour Connect IQ SDK 2.1.3
+- Suppression du support de epix™
+
+v.1.8 - 2016-08-23
+
+- Mise-à-jour Connect IQ SDK 2.1.2
+- Les utilisateurs de vívoactive® HR sont invités à mettre à jour le micrologiciel de leur montre
+
+v.1.7 - 2016-06-13
+
+- Ajout du danois, merci à Anonymous
+
+v.1.6 - 2016-06-10
+
+- Correction de problèmes d'affichage sur Forerunner® 920XT
+- Mise-à-jour Connect IQ SDK 1.2.9
+
+v.1.5 - 2016-05-15
+
+- Correction de la détection du moniteur cardiaque
+- Correction du support du capteur de température (Tempe)
+- Mise-à-jour Connect IQ SDK 1.2.8
+
+v.1.4 - 2016-05-14
+
+- Suppression temporaire du support du capteur de température (Tempe)
+
+v.1.3 - 2016-05-09
+
+- Support de fēnix® 3 et fēnix® 3 HR
+- Ajout des périodes de repos comme intervalles de l'entraînement
+
+v.1.2 - 2016-05-07
+
+- Ajout d'une vibration courte toutes les 10 secondes
+- Changement de la couleur du texte : vert pour l'exercice en cours, orange pour l'exercice suivant
+- Support de vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™
+- Ajout de de du deuxième exercice Planche latérale (droite et gauche)
+- Correction de la ré-initialisation du compteur après la fin de l'entraînement
+
+v.1.1 - 2016-02-10
+
+- Ajout d'une confirmation lors de l'arrêt d'une session en cours
+- Mise-à-jour Connect IQ SDK 1.2.4
+
+v.1.0 - 2016-01-31
+
+- Première livraison publique

@@ -7,9 +7,7 @@ Read more in this article from ACSM's Health and Fitness Journal: https://goo.gl
 The watch displays a timer for the 30-second exercises followed by 10-second rest period (configurable).
 
 Number of exercises, duration of exercises and rest periods are configurable on the watch menu or through Garmin Connect Mobile.
-A long vibration will trigger at the beginning and at the end of each exercise.
-A short vibration will trigger every 10 seconds during the exercise.
-Sound notification is not supported.
+Vibration and sound notification is supported based on the watch features.
 
 Four activity types are available:
 

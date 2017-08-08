@@ -1,8 +1,8 @@
 <strings>
 	<string id="AppName">7-min</string>
-	<string id="AppDescription">7-Minute Workout</string>
+	<string id="AppDescription">Rutina 7-Minutos</string>
 
-	<string id="AppVersionLabel">Version</string>
+	<string id="AppVersionLabel">Versión</string>
 	<string id="ExerciseTimeLabel">Duración del ejercicio (s)</string>
 	<string id="ExerciseTimePrompt">Introduzca duración del ejercicio, en segundos</string>
 	<string id="ExerciseTimeError">La duración del ejercicio no puede ser menor a 10 segundos</string>

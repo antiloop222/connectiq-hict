@@ -38,7 +38,7 @@ L'activité enregistrée dans votre profil Garmin contient les informations prin
 == SUPPORT ==
 
 Vous pouvez soumettre les questions, problèmes et idées d'améliorations sur le site du projet : https://bitbucket.org/obagot/connectiq-hict/issues
-Langue : Allemand, Anglais, Danois, Français, Polonais.
+Langue : Allemand, Anglais, Danois, Espagnol, Français, Polonais.
 Licence : https://opensource.org/licenses/MIT
 
 

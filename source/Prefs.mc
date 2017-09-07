@@ -128,7 +128,7 @@ module Prefs {
     //! @param def the default value if preference value cannot be found
     //! @param min the minimum authorized value for the preference
     //! @param max the maximum authorized value for the preference
-    hidden function getNumber(name, def, min, max) {
+    function getNumber(name, def, min, max) {
         var app = App.getApp();
         var pref = def;
 
@@ -159,7 +159,7 @@ module Prefs {
     //! Return the boolean value for the preference
     //! @param name the name of the preference
     //! @param def the default value if preference value cannot be found
-    hidden function getBoolean(name, def) {
+    function getBoolean(name, def) {
         var app = App.getApp();
         var pref = def;
 
@@ -181,7 +181,7 @@ module Prefs {
         return pref;
     }
 
-    hidden function getNotificationPolicyPref() {
+    function getNotificationPolicyPref() {
         var app = App.getApp();
         var def = POLICY_EVERY_10;
 
@@ -210,11 +210,11 @@ module Prefs {
     }
 
     // Settings name, see resources/settings.xml
-    hidden const ACTIVITY_TYPE = "activityType";
-    hidden const EXERCISE_DURATION = "exerTime";
-    hidden const REST_DURATION = "restTime";
-    hidden const EXERCISE_COUNT = "exerCount";
-    hidden const ALLOW_VIBRATION = "allowVibration";
-    hidden const ALLOW_TONE = "allowTone";
-    hidden const NOTIF_POLICY = "notifPolicy";
+    const ACTIVITY_TYPE = "activityType";
+    const EXERCISE_DURATION = "exerTime";
+    const REST_DURATION = "restTime";
+    const EXERCISE_COUNT = "exerCount";
+    const ALLOW_VIBRATION = "allowVibration";
+    const ALLOW_TONE = "allowTone";
+    const NOTIF_POLICY = "notifPolicy";
 }

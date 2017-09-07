@@ -38,7 +38,7 @@ The activity in your Garmin profile will include basic information such as date,
 == SUPPORT ==
 
 Please submit questions, issues and enhancement requests on the project site: https://bitbucket.org/obagot/connectiq-hict/issues
-Supported languages: Danish, English, French, German, Polish.
+Supported languages: Danish, English, French, German, Polish, Spanish.
 License : https://opensource.org/licenses/MIT
 
 

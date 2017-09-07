@@ -1,3 +1,9 @@
+v.1.15 - 2017-09-07
+
+- Ajout de l'espagnol, merci à Mario
+- Support de Approach® S60
+- Mise-à-jour Connect IQ SDK 2.3.4
+
 v.1.14 - 2017-03-04
 
 - Ajout du polonais, merci à Uriasz

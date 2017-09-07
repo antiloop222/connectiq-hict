@@ -54,12 +54,13 @@ Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a4
 
 Please submit questions, issues and enhancement requests on this project's [issue tracker](https://bitbucket.org/obagot/connectiq-hict/issues).
 
-Supported languages: Danish, English, French, German, Polish.
+Supported languages: Danish, English, French, German, Polish, Spanish.
 
 Supported models:
 * vívoactive®, vívoactive® HR,
 * Forerunner® 920XT, 735XT, 630, 235, 230,
-* fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos.
+* fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos,
+* Approach® S60.
 
 ## Development ##
 
@@ -72,6 +73,12 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.15 - 2017-09-07
+
+* Add Spanish support, thanks to Mario.
+* Add support for Approach® S60.
+* Upgrade to Connect IQ SDK 2.3.4.
 
 ### v.1.14 - 2017-03-04
 

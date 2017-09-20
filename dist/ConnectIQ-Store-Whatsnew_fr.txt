@@ -1,3 +1,8 @@
+v.1.16 - 2017-09-17
+
+- Support de vívoactive® 3 et Forerunner® 935
+- Ajout de l'activité manquante (souplesse) dans les paramètres Connect.
+
 v.1.15 - 2017-09-07
 
 - Ajout de l'espagnol, merci à Mario

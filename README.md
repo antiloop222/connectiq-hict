@@ -57,8 +57,8 @@ Please submit questions, issues and enhancement requests on this project's [issu
 Supported languages: Danish, English, French, German, Polish, Spanish.
 
 Supported models:
-* vívoactive®, vívoactive® HR,
-* Forerunner® 920XT, 735XT, 630, 235, 230,
+* vívoactive®, vívoactive® HR, vívoactive® 3,
+* Forerunner® 935, 920XT, 735XT, 630, 235, 230,
 * fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos,
 * Approach® S60.
 
@@ -73,6 +73,11 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.16 - 2017-09-17
+
+* Add support for vívoactive® 3 and Forerunner® 935.
+* Add missing activity type (flexibility) in Connect settings.
 
 ### v.1.15 - 2017-09-07
 

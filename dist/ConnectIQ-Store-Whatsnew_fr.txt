@@ -1,3 +1,7 @@
+v.1.17 - 2017-10-05
+
+- Correction du démarrage/arrêt de l'activité (vívoactive® 3).
+
 v.1.16 - 2017-09-17
 
 - Support de vívoactive® 3 et Forerunner® 935

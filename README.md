@@ -74,6 +74,10 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 7-min is tested on Garmin vívoactive®.
 
+### v.1.17 - 2017-10-05
+
+* Fix issue with start/stop activity (vívoactive® 3).
+
 ### v.1.16 - 2017-09-17
 
 * Add support for vívoactive® 3 and Forerunner® 935.

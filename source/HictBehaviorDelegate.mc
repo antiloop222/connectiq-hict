@@ -36,7 +36,9 @@ class HictBehaviorDelegate extends Ui.BehaviorDelegate {
                 // Start activity
                 view.startActivity();
             }
+            return true;
         }
+        return false;
     }
 
     function setHictView(v) {

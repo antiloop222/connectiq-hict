@@ -2,6 +2,7 @@ using Toybox.ActivityRecording as Recording;
 using Toybox.Sensor as Sensor;
 using Toybox.SensorHistory as SensorHistory;
 using Toybox.System as Sys;
+using Toybox.Time;
 using Toybox.WatchUi as Ui;
 
 //! Main view for application
@@ -431,6 +432,7 @@ class HictView extends Ui.View {
     }
 
     hidden function drawTemperatureLabel(view) {
+        // Check temperature sensor
         if (temperature == null) {
             readTemperatureFromSensorHistory();
         }
@@ -508,8 +510,22 @@ class HictView extends Ui.View {
             var sensorIter = getTemperatureIterator({:period => 1, :order => SensorHistory.ORDER_NEWEST_FIRST});
             if( sensorIter != null ) {
                 var sample = sensorIter.next();
-                if (sample != null && sample.data != null) {
-                    temperature = sample.data;
+                if (sample != null && sample.data != null && sample.when != null) {
+                    var currentMoment = Time.now();
+                    var sampleMoment = new Time.Moment(sample.when.value);
+
+                    var diffDuration = sample.when.subtract(currentMoment);
+                    if (Log.isDebugEnabled()) {
+                        Log.debug("Sample data: " + sample.data + "°, age: " + diffDuration.value() + "s");
+                    }
+                    // Ignore sample older than 3 minutes
+                    if (diffDuration.value() < 180) {
+                        temperature = sample.data;
+                    } else {
+                        if (Log.isDebugEnabled()) {
+                            Log.debug("Sample too old, ignored");
+                        }
+                    }
                 }
             }
         }

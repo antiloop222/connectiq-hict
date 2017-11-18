@@ -1,6 +1,8 @@
 using Toybox.ActivityRecording as Recording;
 using Toybox.Sensor as Sensor;
+using Toybox.SensorHistory as SensorHistory;
 using Toybox.System as Sys;
+using Toybox.Time;
 using Toybox.WatchUi as Ui;
 
 //! Main view for application
@@ -235,7 +237,7 @@ class HictView extends Ui.View {
             // }
 
             // Temperature sensor info
-            temperature = (info.temperature == null) ? -999 : info.temperature;
+            temperature = info.temperature;
             // if (Log.isDebugEnabled()) {
             //     Log.debug("Temperature info: " + temperature);
             // }
@@ -430,7 +432,12 @@ class HictView extends Ui.View {
     }
 
     hidden function drawTemperatureLabel(view) {
-        if (temperature > -999) {
+        // Check temperature sensor
+        if (temperature == null) {
+            readTemperatureFromSensorHistory();
+        }
+
+        if (temperature != null) {
             view.setText(Lang.format("$1$", [temperature.format("%1.1f")]));
         } else {
             view.setText(Ui.loadResource(Rez.Strings.no_value));
@@ -498,6 +505,44 @@ class HictView extends Ui.View {
         return string;
     }
 
+    function readTemperatureFromSensorHistory() {
+        if (Toybox has :SensorHistory) {
+            var sensorIter = getTemperatureIterator({:period => 1, :order => SensorHistory.ORDER_NEWEST_FIRST});
+            if( sensorIter != null ) {
+                var sample = sensorIter.next();
+                if (sample != null && sample.data != null && sample.when != null) {
+                    var currentMoment = Time.now();
+                    var sampleMoment = new Time.Moment(sample.when.value);
+
+                    var diffDuration = sample.when.subtract(currentMoment);
+                    if (Log.isDebugEnabled()) {
+                        Log.debug("Sample data: " + sample.data + "°, age: " + diffDuration.value() + "s");
+                    }
+                    // Ignore sample older than 3 minutes
+                    if (diffDuration.value() < 180) {
+                        temperature = sample.data;
+                    } else {
+                        if (Log.isDebugEnabled()) {
+                            Log.debug("Sample too old, ignored");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Create a method to get the SensorHistoryIterator object
+    hidden function getTemperatureIterator(options) {
+        // Check device for SensorHistory compatability
+        if ((Toybox has :SensorHistory) && (Toybox.SensorHistory has :getTemperatureHistory)) {
+            // Set up the method with parameters
+            var getMethod = new Lang.Method(Toybox.SensorHistory, :getTemperatureHistory);
+            // Invoke the method with the given parameters
+            return getMethod.invoke(options);
+        }
+        return null;
+    }
+
     //! List of exercises.
     hidden var EXERCISES = [
         Ui.loadResource(Rez.Strings.exercise1),
@@ -535,7 +580,7 @@ class HictView extends Ui.View {
     // Heart rate value, if available
     hidden var heartRate = 0;
     // Temperature value, if available
-    hidden var temperature = 0;
+    hidden var temperature = null;
 
     // Activity type
     hidden var activityType = 0;

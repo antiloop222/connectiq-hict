@@ -1,3 +1,10 @@
+v.1.18 - 2017-11-xx
+
+- Ajout de l'italien, merci à Raghnor.
+- Support de Descent™ Mk1.
+- Ajout de la température pour les modèles avec capteur intégré.
+- Fix font size on vívoactive® 3.
+
 v.1.17 - 2017-10-05
 
 - Correction du démarrage/arrêt de l'activité (vívoactive® 3).

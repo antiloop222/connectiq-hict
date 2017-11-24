@@ -60,6 +60,7 @@ Supported models:
 * vívoactive®, vívoactive® HR, vívoactive® 3,
 * Forerunner® 935, 920XT, 735XT, 630, 235, 230,
 * fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos,
+* Descent™ Mk1,
 * Approach® S60.
 
 ## Development ##
@@ -73,6 +74,13 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 ## History ##
 
 7-min is tested on Garmin vívoactive®.
+
+### v.1.18 - 2017-11-xx
+
+* Add Italian support, thanks to Raghnor.
+* Add support for Descent™ Mk1.
+* Add temperature for devices with internal sensor.
+* Fix font size on vívoactive® 3.
 
 ### v.1.17 - 2017-10-05
 

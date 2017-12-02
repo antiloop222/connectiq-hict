@@ -1,8 +1,9 @@
-v.1.18 - 2017-11-xx
+v.1.18 - 2017-12-02
 
 - Ajout de l'italien, merci à Raghnor.
 - Support de Descent™ Mk1.
 - Ajout de la température pour les modèles avec capteur intégré.
+- Ajout d'une barre de progression pendant l'enregistrement de l'activité.
 - Fix font size on vívoactive® 3.
 
 v.1.17 - 2017-10-05

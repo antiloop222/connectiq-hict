@@ -75,11 +75,12 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 7-min is tested on Garmin vívoactive®.
 
-### v.1.18 - 2017-11-xx
+### v.1.18 - 2017-12-02
 
 * Add Italian support, thanks to Raghnor.
 * Add support for Descent™ Mk1.
 * Add temperature for devices with internal sensor.
+* Add a progress dialog on activity save.
 * Fix font size on vívoactive® 3.
 
 ### v.1.17 - 2017-10-05

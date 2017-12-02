@@ -173,11 +173,32 @@ class HictView extends Ui.View {
 
         // Stop activity recording
         if (session != null) {
+            // Ignore sessions if less than half of exercises are complete
             if (exerciseCount < (maxExerciseCount / 2)) {
-                // Ignore sessions < 6 exercises
                 if (Log.isDebugEnabled()) {
                     Log.debug("Discarding workout session with only " + exerciseCount + " exercises");
                 }
+            } else {
+                if (Log.isDebugEnabled()) {
+                    Log.debug("Workout session will be saved on exit");
+                }
+                isShouldSaveSession = true;
+            }
+        }
+
+        // Reset counters
+        running = false;
+        resting = false;
+        exerciseCount = 0;
+        periodTime = 0;
+    }
+
+    //! Save the activity before exiting
+    function saveOnExit() {
+        // Save activity
+        if (session != null) {
+            if (!isShouldSaveSession) {
+                // Ignore session if not complete
                 session.discard();
             } else {
                 // Show progress bar
@@ -192,27 +213,22 @@ class HictView extends Ui.View {
 
                 // Hide progress bar in 2 seconds
                 progressBarTimer = new Timer.Timer();
-                progressBarTimer.start(method(:hideProgressBar), 2000, false);
+                progressBarTimer.start(method(:exitApp), 2000, false);
             }
 
             // Clean session
             session = null;
         }
-
-        // Reset counters
-        running = false;
-        resting = false;
-        exerciseCount = 0;
-        periodTime = 0;
     }
 
-    //! Hides the progress bar
-    function hideProgressBar() {
+    //! Hides the progress bar and exit
+    function exitApp() {
         progressBarTimer.stop();
         Ui.popView(Ui.SLIDE_IMMEDIATE);
-        Ui.requestUpdate();
+        //Ui.requestUpdate();
         progressBarTimer = null;
         progressBar = null;
+        Sys.exit();
     }
 
     //! Action on timer event: switch to/from workout/rest
@@ -595,6 +611,8 @@ class HictView extends Ui.View {
     hidden var periodTime = 0;
     // Exercise number now playing (1 to maxExerciseCount)
     hidden var exerciseCount = 0;
+    // Flag to know if session should be uploaded to Garmin Connect
+    hidden var isShouldSaveSession = false;
 
     // Heart rate value, if available
     hidden var heartRate = 0;

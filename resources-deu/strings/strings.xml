@@ -31,6 +31,7 @@
 	<string id="no_notif">keine Benachrichtigung</string>
 	<string id="notif_start_end">Trainingseinheiten starten und beenden</string>
 	<string id="notif_every_10s">Alle 10 Sekuknden</string>
+	<string id="saving_activity">Speichern...</string>
 
 	<!-- Keep exercise name less than 20 characters -->
 	<string id="exercise">Trainingseinheit #</string>

@@ -180,15 +180,17 @@ class HictView extends Ui.View {
                 }
                 session.discard();
             } else {
+                // Show progress bar
                 var progressMessage = Ui.loadResource(Rez.Strings.saving_activity);
                 progressBar = new Ui.ProgressBar(progressMessage, null);
-                Ui.pushView(progressBar, null, Ui.SLIDE_DOWN);
+                Ui.pushView(progressBar, null, Ui.SLIDE_IMMEDIATE);
 
                 if (Log.isDebugEnabled()) {
                     Log.debug("Saving workout session");
                 }
                 session.save();
 
+                // Hide progress bar in 2 seconds
                 progressBarTimer = new Timer.Timer();
                 progressBarTimer.start(method(:hideProgressBar), 2000, false);
             }
@@ -207,9 +209,10 @@ class HictView extends Ui.View {
     //! Hides the progress bar
     function hideProgressBar() {
         progressBarTimer.stop();
-        progressBarTimer = null;
-        Ui.popView(Ui.SLIDE_DOWN);
+        Ui.popView(Ui.SLIDE_IMMEDIATE);
         Ui.requestUpdate();
+        progressBarTimer = null;
+        progressBar = null;
     }
 
     //! Action on timer event: switch to/from workout/rest

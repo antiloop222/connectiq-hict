@@ -31,6 +31,7 @@
 	<string id="no_notif">Nessuna notifica</string>
 	<string id="notif_start_end">Inizio e Fine Esercizio</string>
 	<string id="notif_every_10s">Ogni 10 secondi</string>
+	<string id="saving_activity">Salvare...</string>
 
 	<!-- Keep exercise name less than 20 characters -->
 	<string id="exercise">Esercizio #</string>

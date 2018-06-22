@@ -9,15 +9,18 @@ class HictBehaviorDelegate extends Ui.BehaviorDelegate {
 
     //! Back button pressed
     function onBack() {
-        if ((view != null) && !view.isRunning()) {
-            view.saveOnExit();
+        if (view == null) {
+            return false;
+        }
+        if (view.isRunning()) {
+            // Do not quit if activity is running
             return true;
-         }
-        // Do not quit if activity is running
-        return (view != null) && view.isRunning();
+        }
+        view.saveOnExit();
+        return false;
     }
 
-
+    //! Menu button pressed
     function onMenu() {
         if ((view != null) && !view.isRunning()) {
             Ui.pushView(new Rez.Menus.MainMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);

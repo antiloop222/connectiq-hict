@@ -174,7 +174,7 @@ class HictView extends Ui.View {
         // Stop activity recording
         if (session != null) {
             // Ignore sessions if less than half of exercises are complete
-            if (exerciseCount < (maxExerciseCount / 2)) {
+            if (!isShouldSaveSession && exerciseCount < (maxExerciseCount / 2)) {
                 if (Log.isDebugEnabled()) {
                     Log.debug("Discarding workout session with only " + exerciseCount + " exercises");
                 }
@@ -196,9 +196,15 @@ class HictView extends Ui.View {
     //! Save the activity before exiting
     function saveOnExit() {
         // Save activity
+        if (Log.isDebugEnabled()) {
+            Log.debug("Saving activity on exit");
+        }
         if (session != null) {
             if (!isShouldSaveSession) {
                 // Ignore session if not complete
+                if (Log.isDebugEnabled()) {
+                    Log.debug("Discarding workout session");
+                }
                 session.discard();
             } else {
                 // Show progress bar
@@ -213,11 +219,15 @@ class HictView extends Ui.View {
 
                 // Hide progress bar in 2 seconds
                 progressBarTimer = new Timer.Timer();
-                progressBarTimer.start(method(:exitApp), 2000, false);
+                progressBarTimer.start(method(:exitApp), 1000, false);
             }
 
             // Clean session
             session = null;
+        } else {
+            if (Log.isDebugEnabled()) {
+                Log.debug("No workout session to save");
+            }
         }
     }
 
@@ -263,15 +273,9 @@ class HictView extends Ui.View {
         if (info != null) {
             // Heart rate sensor info
             heartRate = (info.heartRate == null) ? 0 : info.heartRate;
-            // if (Log.isDebugEnabled()) {
-            //     Log.debug("Heartrate info: " + heartRate);
-            // }
 
             // Temperature sensor info
             temperature = info.temperature;
-            // if (Log.isDebugEnabled()) {
-            //     Log.debug("Temperature info: " + temperature);
-            // }
 
             // Update view
             Ui.requestUpdate();

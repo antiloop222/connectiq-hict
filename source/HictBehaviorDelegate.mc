@@ -9,6 +9,10 @@ class HictBehaviorDelegate extends Ui.BehaviorDelegate {
 
     //! Back button pressed
     function onBack() {
+        if ((view != null) && !view.isRunning()) {
+            view.saveOnExit();
+            return true;
+         }
         // Do not quit if activity is running
         return (view != null) && view.isRunning();
     }

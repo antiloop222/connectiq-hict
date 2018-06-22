@@ -484,6 +484,7 @@ class HictView extends Ui.View {
     }
 
     hidden function findSessionName() {
+        /*
         var name = "";
         if (activityType == Prefs.CARDIO) {
             // Cardio training
@@ -499,6 +500,8 @@ class HictView extends Ui.View {
             name = Ui.loadResource(Rez.Strings.sevenminutes);
         }
         return name;
+        */
+        return "7-minute workout";
     }
 
     hidden function findActivityType() {

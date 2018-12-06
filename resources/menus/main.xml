@@ -1,7 +1,7 @@
 <menu id="MainMenu">
-	<menu-item id="ActivityType">@Strings.ActivityTypeLabel</menu-item>
-	<menu-item id="ExerciseCount">@Strings.ExerciseCountLabel</menu-item>
-	<menu-item id="ExerciseDuration">@Strings.ExerciseTimeLabel</menu-item>
-	<menu-item id="RestDuration">@Strings.RestTimeLabel</menu-item>
-	<menu-item id="NotifPolicy">@Strings.NotifPolicyLabel</menu-item>
+	<menu-item id="ActivityType" label="@Strings.ActivityTypeLabel" />
+	<menu-item id="ExerciseCount" label="@Strings.ExerciseCountLabel" />
+	<menu-item id="ExerciseDuration" label="@Strings.ExerciseTimeLabel" />
+	<menu-item id="RestDuration" label="@Strings.RestTimeLabel" />
+	<menu-item id="NotifPolicy" label="@Strings.NotifPolicyLabel" />
 </menu>

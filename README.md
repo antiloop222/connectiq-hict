@@ -16,29 +16,29 @@ Sound notification is not supported.
 
 Four activity types are available:
 
- - 7-minute workout: 13 exercises from HICT program are repeated, activity is saved as cardio training
- - Cardio: activity is saved as cardio training
- - Strength: activity is saved as strength training
- - Flexibility: activity is saved as flexibility training
+- 7-minute workout: 13 exercises from HICT program are repeated, activity is saved as cardio training
+- Cardio: activity is saved as cardio training
+- Strength: activity is saved as strength training
+- Flexibility: activity is saved as flexibility training
 
 The application supports heart-rate monitor (HRM) and temperature sensor (Tempe).
 
 Use the menu button to configure:
 
- - Activity type
- - Number of exercises
- - Duration of exercise, in seconds
- - Duration of rest period, in seconds
- - Notification policy: none, start and end, every 10 seconds
+- Activity type
+- Number of exercises
+- Duration of exercise, in seconds
+- Duration of rest period, in seconds
+- Notification policy: none, start and end, every 10 seconds
 
 If you achieve at least half of the session, the activity is recorded in your Garmin profile.
 
 The activity in your Garmin profile will include basic information such as date, time, total activity time.
 
- - Each exercise and rest period corresponds to a lap.
- - Heart-rate graph is included if a heart-rate monitor is used.
- - Temperature graph is included if a temperature sensor is used.
- - Calories will be automatically calculated if and only if a heart-rate monitor is used.
+- Each exercise and rest period corresponds to a lap.
+- Heart-rate graph is included if a heart-rate monitor is used.
+- Temperature graph is included if a temperature sensor is used.
+- Calories will be automatically calculated if and only if a heart-rate monitor is used.
 
 ![Capture](dist/images/capture1.png)
 ![Capture](dist/images/capture4.png)
@@ -54,14 +54,15 @@ Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a4
 
 Please submit questions, issues and enhancement requests on this project's [issue tracker](https://bitbucket.org/obagot/connectiq-hict/issues).
 
-Supported languages: Danish, English, French, German, Polish, Spanish.
+Supported languages: Danish, English, French, German, Polish, Russian, Spanish.
 
 Supported models:
-* vívoactive®, vívoactive® HR, vívoactive® 3,
-* Forerunner® 935, 920XT, 735XT, 630, 235, 230,
-* fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos,
-* Descent™ Mk1,
-* Approach® S60.
+
+- vívoactive®, vívoactive® HR, vívoactive® 3,
+- Forerunner® 935, 920XT, 735XT, 630, 235, 230,
+- fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos,
+- Descent™ Mk1,
+- Approach® S60.
 
 ## Development ##
 
@@ -73,109 +74,115 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
-7-min is tested on Garmin vívoactive®.
+7-min is tested on Garmin vívoactive® 3.
 
-### v.1.18 - 2017-12-02
+### v.1.19 - 2018-12-xx ###
 
-* Add Italian support, thanks to Raghnor.
-* Add support for Descent™ Mk1.
-* Add temperature for devices with internal sensor.
-* Add a progress dialog on activity save.
-* Fix font size on vívoactive® 3.
+- Add support for repetitive activities in same workout.
+- Add Russion support, thanks to Korneev.
+- Upgrade to Connect IQ SDK 3.0.6.
 
-### v.1.17 - 2017-10-05
+### v.1.18 - 2017-12-02 ###
 
-* Fix issue with start/stop activity (vívoactive® 3).
+- Add Italian support, thanks to Raghnor.
+- Add support for Descent™ Mk1.
+- Add temperature for devices with internal sensor.
+- Add a progress dialog on activity save.
+- Fix font size on vívoactive® 3.
 
-### v.1.16 - 2017-09-17
+### v.1.17 - 2017-10-05 ###
 
-* Add support for vívoactive® 3 and Forerunner® 935.
-* Add missing activity type (flexibility) in Connect settings.
+- Fix issue with start/stop activity (vívoactive® 3).
 
-### v.1.15 - 2017-09-07
+### v.1.16 - 2017-09-17 ###
 
-* Add Spanish support, thanks to Mario.
-* Add support for Approach® S60.
-* Upgrade to Connect IQ SDK 2.3.4.
+- Add support for vívoactive® 3 and Forerunner® 935.
+- Add missing activity type (flexibility) in Connect settings.
 
-### v.1.14 - 2017-03-04
+### v.1.15 - 2017-09-07 ###
 
-* Add Polish support, thanks to Uriasz.
-* Change session name based on activity type.
+- Add Spanish support, thanks to Mario.
+- Add support for Approach® S60.
+- Upgrade to Connect IQ SDK 2.3.4.
 
-### v.1.13 - 2017-02-10
+### v.1.14 - 2017-03-04 ###
 
-* Add activity type: flexibility training.
-* Add German support, thanks to Mateo.
-* Add support for fēnix® 5, 5S, 5X.
-* Upgrade to Connect IQ SDK 2.2.4.
+- Add Polish support, thanks to Uriasz.
+- Change session name based on activity type.
 
-### v.1.12 - 2017-01-06
+### v.1.13 - 2017-02-10 ###
 
-* Add notification policy: none, start and end, every 10 seconds.
-* Add tone notifications.
-* Add backlight on notification.
-* Add configuration for vibration and tone notifications.
-* Upgrade to Connect IQ SDK 2.2.3.
+- Add activity type: flexibility training.
+- Add German support, thanks to Mateo.
+- Add support for fēnix® 5, 5S, 5X.
+- Upgrade to Connect IQ SDK 2.2.4.
 
-### v.1.11 - 2017-01-03
+### v.1.12 - 2017-01-06 ###
 
-* Add support for Forerunner® 735XT, fēnix® Chronos.
-* Upgrade to Connect IQ SDK 2.2.2.
+- Add notification policy: none, start and end, every 10 seconds.
+- Add tone notifications.
+- Add backlight on notification.
+- Add configuration for vibration and tone notifications.
+- Upgrade to Connect IQ SDK 2.2.3.
 
-### v.1.10 - 2016-11-10
+### v.1.11 - 2017-01-03 ###
 
-* Add menu to configure settings directly from the watch.
-* Add configuration for number of exercises.
-* Add configurable activity type: 7-minute, cardio training or strength training.
-* Upgrade to Connect IQ SDK 2.1.5.
+- Add support for Forerunner® 735XT, fēnix® Chronos.
+- Upgrade to Connect IQ SDK 2.2.2.
 
-### v.1.9 - 2016-10-15
+### v.1.10 - 2016-11-10 ###
 
-* Change activity type from strength training to cardio training.
-* Upgrade to Connect IQ SDK 2.1.3.
-* Remove epix™ support.
+- Add menu to configure settings directly from the watch.
+- Add configuration for number of exercises.
+- Add configurable activity type: 7-minute, cardio training or strength training.
+- Upgrade to Connect IQ SDK 2.1.5.
 
-### v.1.8 - 2016-08-23
+### v.1.9 - 2016-10-15 ###
 
-* Upgrade to Connect IQ SDK 2.1.2.
+- Change activity type from strength training to cardio training.
+- Upgrade to Connect IQ SDK 2.1.3.
+- Remove epix™ support.
 
-### v.1.7 - 2016-06-13
+### v.1.8 - 2016-08-23 ###
 
-* Add Danish support, thanks to Anonymous.
+- Upgrade to Connect IQ SDK 2.1.2.
 
-### v.1.6 - 2016-06-10
+### v.1.7 - 2016-06-13 ###
 
-* Fix display issue on Forerunner® 920XT.
-* Upgrade to Connect IQ SDK 1.2.9.
+- Add Danish support, thanks to Anonymous.
 
-### v.1.5 - 2016-05-15
+### v.1.6 - 2016-06-10 ###
 
-* Fix issue with HRM sensor detection
-* Add support for temperature sensor (Tempe) back
+- Fix display issue on Forerunner® 920XT.
+- Upgrade to Connect IQ SDK 1.2.9.
 
-### v.1.4 - 2016-05-14
+### v.1.5 - 2016-05-15 ###
 
-* Removed temporarily support for temperature sensor (Tempe)
+- Fix issue with HRM sensor detection
+- Add support for temperature sensor (Tempe) back
 
-### v.1.3 - 2016-05-09
+### v.1.4 - 2016-05-14 ###
 
-* Added support for fēnix® 3 and fēnix® 3 HR
-* Rest time is now included in workout session as lap
+- Removed temporarily support for temperature sensor (Tempe)
 
-### v.1.2 - 2016-05-07
+### v.1.3 - 2016-05-09 ###
 
-* Added short vibration every 10 seconds
-* Changed text color: green for current exercise, orange for next exercise
-* Added support for vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™
-* Added second side plank exercise
-* Fixed reset of period time when activity stopped
+- Added support for fēnix® 3 and fēnix® 3 HR
+- Rest time is now included in workout session as lap
 
-### v.1.1 - 2016-02-10
+### v.1.2 - 2016-05-07 ###
 
-* Added confirmation dialog when stopping an active session.
-* Upgrade to Connect IQ SD 1.2.4.
+- Added short vibration every 10 seconds
+- Changed text color: green for current exercise, orange for next exercise
+- Added support for vívoactive® HR, Forerunner® 920XT, 630, 235, 230, epix™
+- Added second side plank exercise
+- Fixed reset of period time when activity stopped
 
-### v.1.0 - 2016-01-31
+### v.1.1 - 2016-02-10 ###
 
-* First public release.
+- Added confirmation dialog when stopping an active session.
+- Upgrade to Connect IQ SD 1.2.4.
+
+### v.1.0 - 2016-01-31 ###
+
+- First public release.

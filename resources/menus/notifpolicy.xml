@@ -1,5 +1,5 @@
 <menu id="NotifPolicyMenu">
-	<menu-item id="Policy0">@Strings.no_notif</menu-item>
-	<menu-item id="Policy1">@Strings.notif_start_end</menu-item>
-	<menu-item id="Policy2">@Strings.notif_every_10s</menu-item>
+	<menu-item id="Policy0" label="@Strings.no_notif" />
+	<menu-item id="Policy1" label="@Strings.notif_start_end" />
+	<menu-item id="Policy2" label="@Strings.notif_every_10s" />
 </menu>

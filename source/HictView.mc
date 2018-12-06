@@ -1,8 +1,11 @@
 using Toybox.ActivityRecording as Recording;
-using Toybox.Sensor as Sensor;
-using Toybox.SensorHistory as SensorHistory;
+using Toybox.Attention;
+using Toybox.Lang;
+using Toybox.Sensor;
+using Toybox.SensorHistory;
 using Toybox.System as Sys;
 using Toybox.Time;
+using Toybox.Timer;
 using Toybox.WatchUi as Ui;
 
 //! Main view for application

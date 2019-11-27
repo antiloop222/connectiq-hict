@@ -1,2 +1,12 @@
 project.manifest = manifest.xml
 
+# Shared resource paths
+legacyherocaptainmarvel.resourcePath = $(legacyherocaptainmarvel.resourcePath);resources-vivoactive4s
+legacyherofirstavenger.resourcePath = $(legacyherofirstavenger.resourcePath);resources-vivoactive4
+legacysagadarthvader.resourcePath = $(legacysagadarthvader.resourcePath);resources-vivoactive4
+legacysagarey.resourcePath = $(legacysagarey.resourcePath);resources-vivoactive4s
+fenix5splus.resourcePath = $(fenix5splus.resourcePath);resources-fenix5s
+fenixchronos.resourcePath = $(fenixchronos.resourcePath);resources-fenix5s
+vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);resources-vivoactive3
+vivoactive3m.resourcePath = $(vivoactive3m.resourcePath);resources-vivoactive3
+vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);resources-vivoactive3

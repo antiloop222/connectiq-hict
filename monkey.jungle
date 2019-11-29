@@ -1,12 +1,28 @@
 project.manifest = manifest.xml
 
 # Shared resource paths
-legacyherocaptainmarvel.resourcePath = $(legacyherocaptainmarvel.resourcePath);resources-vivoactive4s
+fenix3_hr.resourcePath = $(fenix3_hr.resourcePath);resources-fenix3
+fenix5splus.resourcePath = $(fenix5splus.resourcePath);resources-fenix5s
+fenix6s.resourcePath = $(fenix6s.resourcePath);resources-round-240x240-v2
+fenix6spro.resourcePath = $(fenix6spro.resourcePath);resources-round-240x240-v2
+fenixchronos.resourcePath = $(fenixchronos.resourcePath);resources-fenix5s
+fr245.resourcePath = $(fr245.resourcePath);resources-round-240x240-v2
+fr245m.resourcePath = $(fr245m.resourcePath);$(fr245.resourcePath);resources-round-240x240-v2
+fr920xt.resourcePath = $(fr920xt.resourcePath);resources-vivoactive
+fr945.resourcePath = $(fr945.resourcePath);resources-round-240x240-v2
+legacyherocaptainmarvel.resourcePath = $(legacyherocaptainmarvel.resourcePath);$(vivoactive4s.resourcePath)
 legacyherofirstavenger.resourcePath = $(legacyherofirstavenger.resourcePath);resources-vivoactive4
 legacysagadarthvader.resourcePath = $(legacysagadarthvader.resourcePath);resources-vivoactive4
-legacysagarey.resourcePath = $(legacysagarey.resourcePath);resources-vivoactive4s
-fenix5splus.resourcePath = $(fenix5splus.resourcePath);resources-fenix5s
-fenixchronos.resourcePath = $(fenixchronos.resourcePath);resources-fenix5s
-vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);resources-vivoactive3
-vivoactive3m.resourcePath = $(vivoactive3m.resourcePath);resources-vivoactive3
-vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);resources-vivoactive3
+legacysagarey.resourcePath = $(legacysagarey.resourcePath);$(vivoactive4s.resourcePath)
+marqadventurer.resourcePath = $(marqadventurer.resourcePath);resources-round-240x240-v2
+marqaviator.resourcePath = $(marqaviator.resourcePath);resources-round-240x240-v2
+marqathlete.resourcePath = $(marqathlete.resourcePath);resources-round-240x240-v2
+marqcaptain.resourcePath = $(marqcaptain.resourcePath);resources-round-240x240-v2
+marqcommander.resourcePath = $(marqcommander.resourcePath);resources-round-240x240-v2
+marqdriver.resourcePath = $(marqdriver.resourcePath);resources-round-240x240-v2
+marqexpedition.resourcePath = $(marqexpedition.resourcePath);resources-round-240x240-v2
+vivoactive3.resourcePath = $(vivoactive3.resourcePath);resources-round-240x240-v2
+vivoactive3d.resourcePath = $(vivoactive3d.resourcePath);$(vivoactive3.resourcePath)
+vivoactive3m.resourcePath = $(vivoactive3m.resourcePath);$(vivoactive3.resourcePath)
+vivoactive3mlte.resourcePath = $(vivoactive3mlte.resourcePath);$(vivoactive3.resourcePath)
+vivoactive4s.resourcePath = $(vivoactive4s.resourcePath);resources-round-218x218-v2

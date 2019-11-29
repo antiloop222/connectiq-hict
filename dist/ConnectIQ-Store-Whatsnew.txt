@@ -1,3 +1,10 @@
+v.1.19 - 2019-11-29
+
+- Add support for new watches.
+- Add support for repetitive activities in same workout.
+- Add Russian support, thanks to Korneev.
+- Upgrade to Connect IQ SDK 3.1.6.
+
 v.1.18 - 2017-12-02
 
 - Add Italian support, thanks to Raghnor.

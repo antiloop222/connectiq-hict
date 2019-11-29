@@ -1,5 +1,7 @@
 project.manifest = manifest.xml
 
+base.sourcePath = source
+
 # Shared resource paths
 fenix3_hr.resourcePath = $(fenix3_hr.resourcePath);resources-fenix3
 fenix5splus.resourcePath = $(fenix5splus.resourcePath);resources-fenix5s

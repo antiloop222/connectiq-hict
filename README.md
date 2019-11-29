@@ -84,7 +84,7 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
-### v.1.19 - 2019-12-xx ###
+### v.1.19 - 2019-11-29 ###
 
 - Add support for new watches.
 - Add support for repetitive activities in same workout.

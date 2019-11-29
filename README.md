@@ -54,33 +54,42 @@ Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a4
 
 Please submit questions, issues and enhancement requests on this project's [issue tracker](https://bitbucket.org/obagot/connectiq-hict/issues).
 
-Supported languages: Danish, English, French, German, Polish, Russian, Spanish.
+Available languages:
+- Danish (partly),
+- English,
+- French,
+- German,
+- Polish,
+- Russian,
+- Spanish.
 
 Supported models:
 
-- vívoactive®, vívoactive® HR, vívoactive® 3,
-- Forerunner® 935, 920XT, 735XT, 630, 235, 230,
-- fēnix® 5, fēnix® 5S, fēnix® 5X, fēnix® 3, fēnix® 3 HR, fēnix® Chronos,
-- Descent™ Mk1,
 - Approach® S60.
+- D2 Charlie and D2 Delta series,
+- Descent™ Mk1,
+- fēnix® 3, fēnix® 5 and fēnix® 6 series,
+- Forerunner® series, except Forerunner® 45,
+- MARQ™ series,
+- Venu™,
+- vívoactive®, vívoactive® HR, vívoactive® 3 and vívoactive® 4 series,
 
 ## Development ##
 
 Source code is made available under the [MIT license](https://opensource.org/licenses/MIT).
 
-Pull requests and translations are welcomed!
+[Pull requests](https://bitbucket.org/obagot/connectiq-hict/pull-requests) and translations are welcomed!
 
 When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remember to change the application ID in *manifest.xml*, to prevent issues between both applications on the watch.
 
 ## History ##
 
-7-min is tested on Garmin vívoactive® 3.
+### v.1.19 - 2019-11-29 ###
 
-### v.1.19 - 2018-12-xx ###
-
+- Add support for new watches.
 - Add support for repetitive activities in same workout.
-- Add Russion support, thanks to Korneev.
-- Upgrade to Connect IQ SDK 3.0.6.
+- Add Russian support, thanks to Korneev.
+- Upgrade to Connect IQ SDK 3.1.6.
 
 ### v.1.18 - 2017-12-02 ###
 

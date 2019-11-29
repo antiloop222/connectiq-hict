@@ -1,3 +1,10 @@
+v.1.19 - 2019-11-29
+
+- Support de nouveaux modèles de montre.
+- Ajout des répétitions d'activités au sein de la même session.
+- Ajout du russe, merci à Korneev.
+- Mise-à-jour Connect IQ SDK 3.1.6.
+
 v.1.18 - 2017-12-02
 
 - Ajout de l'italien, merci à Raghnor.

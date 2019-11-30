@@ -6,8 +6,8 @@ Cet entraînement est proposé et décrit dans un article de ACSM's Health and F
 
 La montre affiche un minuteur pour les exercices (30 secondes) ainsi que les périodes de repos (10 secondes).
 
-Le nombre d'exercise, leur durée ainsi que la durée du repos sont configurables par le menu de la montre et Garmin Connect Mobile.
-Les notifications par vibration ou sons dépendes du modèle de montre.
+Le nombre d'exercises, leur durée ainsi que la durée du repos sont configurables par le menu de la montre et Garmin Connect Mobile.
+Les notifications par vibration ou sons dépendent du modèle de montre.
 
 Quatre activités sont proposées :
 

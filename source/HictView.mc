@@ -476,6 +476,11 @@ class HictView extends Ui.View {
         }
 
         if (temperature != null) {
+            // Convert to °F if settings set to statute
+            if (Sys.getDeviceSettings().temperatureUnits == Sys.UNIT_STATUTE) {
+                temperature = (temperature * 9 / 5) + 32;
+            }
+
             view.setText(Lang.format("$1$", [temperature.format("%1.1f")]));
         } else {
             view.setText(Ui.loadResource(Rez.Strings.no_value));

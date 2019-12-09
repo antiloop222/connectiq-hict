@@ -84,6 +84,10 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
+### v.1.20 - xxxx-xx-xx ###
+
+- Fix temperature units based on Garmin Connect settings.
+
 ### v.1.19 - 2019-11-29 ###
 
 - Add support for new watches.

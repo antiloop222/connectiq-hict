@@ -1,3 +1,8 @@
+v.1.20 - 2020-01-10
+
+- Ajout du Suédois, merci à Erik.
+- Correction des unités de température en fonction de la configuration Garmin Connect.
+
 v.1.19 - 2019-11-29
 
 - Support de nouveaux modèles de montre.

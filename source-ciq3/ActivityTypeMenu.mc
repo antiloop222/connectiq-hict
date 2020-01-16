@@ -2,29 +2,22 @@ using Toybox.WatchUi as Ui;
 
 //! Activity type menu
 //! Replaces old resource menus/activitytype.xml
-class ActivityTypeMenu extends Ui.Menu {
+class ActivityTypeMenu extends Ui.CheckboxMenu {
 
-    function initialize() {
-        Menu.initialize();
-        // setTitle("Activity Type");
-
-        var label;
+    function initialize(mode) {
+        CheckboxMenu.initialize({ :title => Rez.Strings.ActivityTypeLabel });
 
         // 7-minute workout
-        label = Ui.loadResource(Rez.Strings.sevenminutes);
-        self.addItem(label, :Seven);
+        addItem(new CheckboxMenuItem(Rez.Strings.sevenminutes, null, :Seven, (mode == Prefs.SEVEN), {}));
 
         // Cardio
-        label = Ui.loadResource(Rez.Strings.cardio);
-        self.addItem(label, :Cardio);
+        addItem(new CheckboxMenuItem(Rez.Strings.cardio, null, :Cardio, (mode == Prefs.CARDIO), {}));
 
         // Strength
-        label = Ui.loadResource(Rez.Strings.strength);
-        self.addItem(label, :Strength);
+        addItem(new CheckboxMenuItem(Rez.Strings.strength, null, :Strength, (mode == Prefs.STRENGTH), {}));
 
         // Flexibility
-        label = Ui.loadResource(Rez.Strings.flexibility);
-        self.addItem(label, :Flexibility);
+        addItem(new CheckboxMenuItem(Rez.Strings.flexibility, null, :Flexibility, (mode == Prefs.FLEXIBILITY), {}));
     }
 
 }

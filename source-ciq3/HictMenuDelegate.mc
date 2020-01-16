@@ -2,92 +2,65 @@ using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 
 //! Application menu delegate
-class HictMenuDelegate extends Ui.MenuInputDelegate {
+class HictMenuDelegate extends Ui.Menu2InputDelegate {
 
     function initialize() {
-        MenuInputDelegate.initialize();
+        Menu2InputDelegate.initialize();
     }
 
-    function onMenuItem(item) {
+    function onSelect(item) {
+        var itemId = item.getId();
+
         // Main
-        if (item == :ExerciseDuration) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: ExerciseDuration");
-            }
+        if (itemId == :ExerciseDuration) {
             Ui.pushView(new SingleNumberPicker(Rez.Strings.ExerciseTimeLabel, Prefs.getExerciseDuration(), 10, 99),
                 new ExerciseDurationPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
-        if (item == :RestDuration) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: RestDuration");
-            }
+        if (itemId == :RestDuration) {
             Ui.pushView(new SingleNumberPicker(Rez.Strings.RestTimeLabel, Prefs.getRestDuration(), 5, 99),
                 new RestDurationPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
-        if (item == :ExerciseCount) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: ExerciseCount");
-            }
+        if (itemId == :ExerciseCount) {
             Ui.pushView(new SingleNumberPicker(Rez.Strings.ExerciseCountLabel, Prefs.getExerciseCount(), 1, 99),
                 new ExerciseCountPickerDelegate(), Ui.SLIDE_IMMEDIATE);
         }
-        if (item == :ActivityType) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: ActivityType");
-            }
-            Ui.pushView(new ActivityTypeMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
+        if (itemId == :ActivityType) {
+            Ui.pushView(new ActivityTypeMenu(Prefs.getActivityType()), self, Ui.SLIDE_LEFT);
         }
-        if (item == :NotifPolicy) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: NotifPolicy");
-            }
-            Ui.pushView(new NotifPolicyMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
+        if (itemId == :NotifPolicy) {
+            Ui.pushView(new NotifPolicyMenu(Prefs.getNotificationPolicy()), self, Ui.SLIDE_LEFT);
         }
 
         // Activity type
-        if (item == :Seven) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: Seven Minutes");
-            }
+        if (itemId == :Seven) {
             Prefs.setActivityType(Prefs.SEVEN);
+            Ui.popView(Ui.SLIDE_RIGHT);
         }
-        if (item == :Cardio) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: Cardio");
-            }
+        if (itemId == :Cardio) {
             Prefs.setActivityType(Prefs.CARDIO);
+            Ui.popView(Ui.SLIDE_RIGHT);
         }
-        if (item == :Strength) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: Strength");
-            }
+        if (itemId == :Strength) {
             Prefs.setActivityType(Prefs.STRENGTH);
+            Ui.popView(Ui.SLIDE_RIGHT);
         }
-        if (item == :Flexibility) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: Flexibility");
-            }
+        if (itemId == :Flexibility) {
             Prefs.setActivityType(Prefs.FLEXIBILITY);
+            Ui.popView(Ui.SLIDE_RIGHT);
         }
 
         // Notification policy
-        if (item == :Policy0) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: Policy 0");
-            }
+        if (itemId == :Policy0) {
             Prefs.setNotificationPolicy(Prefs.POLICY_NONE);
+            Ui.popView(Ui.SLIDE_RIGHT);
         }
-        if (item == :Policy1) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: Policy 1");
-            }
+        if (itemId == :Policy1) {
             Prefs.setNotificationPolicy(Prefs.POLICY_START_END);
+            Ui.popView(Ui.SLIDE_RIGHT);
         }
-        if (item == :Policy2) {
-            if (Log.isDebugEnabled()) {
-                Log.debug("Menu item: Policy 2");
-            }
+        if (itemId == :Policy2) {
             Prefs.setNotificationPolicy(Prefs.POLICY_EVERY_10);
+            Ui.popView(Ui.SLIDE_RIGHT);
         }
     }
 

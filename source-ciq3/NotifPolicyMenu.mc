@@ -2,25 +2,19 @@ using Toybox.WatchUi as Ui;
 
 //! Notification policy menu
 //! Replaces old resource menus/notifpolicy.xml
-class NotifPolicyMenu extends Ui.Menu {
+class NotifPolicyMenu extends Ui.CheckboxMenu {
 
-    function initialize() {
-        Menu.initialize();
-        // setTitle("Notifications");
-
-        var label;
+    function initialize(mode) {
+        CheckboxMenu.initialize({ :title => Rez.Strings.NotifPolicyLabel });
 
         // Policy 0 - No notification
-        label = Ui.loadResource(Rez.Strings.no_notif);
-        self.addItem(label, :Policy0);
+        addItem(new CheckboxMenuItem(Rez.Strings.no_notif, null, :Policy0, (mode == Prefs.POLICY_NONE), {}));
 
         // Policy 1 - Notification on start and end
-        label = Ui.loadResource(Rez.Strings.notif_start_end);
-        self.addItem(label, :Policy1);
+        addItem(new CheckboxMenuItem(Rez.Strings.notif_start_end, null, :Policy1, (mode == Prefs.POLICY_START_END), {}));
 
         // Policy 2 - Notification every 10s
-        label = Ui.loadResource(Rez.Strings.notif_every_10s);
-        self.addItem(label, :Policy2);
+        addItem(new CheckboxMenuItem(Rez.Strings.notif_every_10s, null, :Policy2, (mode == Prefs.POLICY_EVERY_10), {}));
     }
 
 }

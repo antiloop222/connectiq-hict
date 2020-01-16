@@ -60,8 +60,10 @@ class MainMenu extends Ui.Menu2 {
             case Prefs.SEVEN:
                 // Falls through
             default:
-                return Ui.loadResource(Rez.Strings.sevenminutes);
+                // Falls through
         }
+        // Default
+        return Ui.loadResource(Rez.Strings.sevenminutes);
     }
 
     function getNotifPolicyLabel() {
@@ -74,8 +76,10 @@ class MainMenu extends Ui.Menu2 {
             case Prefs.POLICY_NONE:
                 // Falls through
             default:
-                return Ui.loadResource(Rez.Strings.no_notif);
+                // Falls through
         }
+        // Default
+        return Ui.loadResource(Rez.Strings.no_notif);
     }
 
 

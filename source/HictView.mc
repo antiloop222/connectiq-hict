@@ -509,7 +509,9 @@ class HictView extends Ui.View {
         }
         return name;
         */
-        return "7-minute workout";
+
+        // The suggested maximum length of the name is 15 characters (some devices support longer names).
+        return "7-min workout";
     }
 
     hidden function findActivityType() {

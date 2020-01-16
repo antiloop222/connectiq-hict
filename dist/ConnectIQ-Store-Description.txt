@@ -1,5 +1,7 @@
 7-Minute Workout application for Garmin watches.
 
+Note: This app is in maintenance. No additional features will be added in the future. Thank you for your understanding.
+
 This watch application drives you through the execution of 13 exercises described in literature as High-Intensity Circuit Training.
 
 Read more in this article from ACSM's Health and Fitness Journal: https://goo.gl/zAnVOP

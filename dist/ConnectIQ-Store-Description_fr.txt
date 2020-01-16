@@ -1,5 +1,7 @@
 Application 7-Minute Workout pour montres Garmin.
 
+Note : Cette application est en maintenance. Plus aucune fonctionalité ne pourra être ajoutée dorénavant. Merci de votre compréhension.
+
 Cette application vous permet d'enchainer les 12 exercices d'entraînement fractionné de haute intensité (HICT ou HIIT).
 
 Cet entraînement est proposé et décrit dans un article de ACSM's Health and Fitness Journal: https://goo.gl/zAnVOP

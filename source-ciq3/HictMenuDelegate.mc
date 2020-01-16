@@ -35,13 +35,13 @@ class HictMenuDelegate extends Ui.MenuInputDelegate {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: ActivityType");
             }
-            Ui.pushView(new Rez.Menus.ActivityTypeMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
+            Ui.pushView(new ActivityTypeMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
         }
         if (item == :NotifPolicy) {
             if (Log.isDebugEnabled()) {
                 Log.debug("Menu item: NotifPolicy");
             }
-            Ui.pushView(new Rez.Menus.NotifPolicyMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
+            Ui.pushView(new NotifPolicyMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
         }
 
         // Activity type

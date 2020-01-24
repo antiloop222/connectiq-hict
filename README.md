@@ -41,10 +41,10 @@ The activity in your Garmin profile will include basic information such as date,
 - Calories will be automatically calculated if and only if a heart-rate monitor is used.
 
 ![Capture](dist/images/capture1.png)
-![Capture](dist/images/capture4.png)
-![Capture](dist/images/capture5.png)
 ![Capture](dist/images/capture2.png)
 ![Capture](dist/images/capture3.png)
+![Capture](dist/images/capture4.png)
+![Capture](dist/images/capture5.png)
 
 ## Installation ##
 
@@ -83,6 +83,11 @@ Source code is made available under the [MIT license](https://opensource.org/lic
 When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remember to change the application ID in *manifest.xml*, to prevent issues between both applications on the watch.
 
 ## History ##
+
+### v.1.21 - 2020-01-xx ###
+
+- New options menu format for modern watches (Connect IQ 3+).
+- Fix "workou" session name.
 
 ### v.1.20 - 2020-01-10 ###
 

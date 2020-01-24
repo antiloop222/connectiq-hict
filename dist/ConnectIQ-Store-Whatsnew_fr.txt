@@ -1,3 +1,8 @@
+v.1.21 - 2020-01-xx
+
+- Nouveau format du menu de configuration pour les montres plus récentes (Connect IQ 3+).
+- Correction du problème de nom de session "workou".
+
 v.1.20 - 2020-01-10
 
 - Ajout du Suédois, merci à Erik.

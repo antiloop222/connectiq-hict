@@ -1,3 +1,8 @@
+v.1.21 - 2020-01-xx
+
+- New options menu format for modern watches (Connect IQ 3+).
+- Fix "workou" session name.
+
 v.1.20 - 2020-01-10
 
 - Add Swedish support, thanks to Erik.

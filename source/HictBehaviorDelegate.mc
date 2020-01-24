@@ -23,7 +23,7 @@ class HictBehaviorDelegate extends Ui.BehaviorDelegate {
     //! Menu button pressed
     function onMenu() {
         if ((view != null) && !view.isRunning()) {
-            Ui.pushView(new Rez.Menus.MainMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
+            Ui.pushView(new MainMenu(), new HictMenuDelegate(), Ui.SLIDE_UP);
             return true;
          }
          return false;

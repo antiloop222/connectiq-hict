@@ -1,7 +1,8 @@
-v.1.21 - 2020-01-xx
+v.1.21 - 2020-02-01
 
 - New options menu format for modern watches (Connect IQ 3+).
 - Fix "workou" session name.
+- Upgrade to Connect IQ SDK 3.1.7.
 
 v.1.20 - 2020-01-10
 
@@ -14,13 +15,5 @@ v.1.19 - 2019-11-29
 - Add support for repetitive activities in same workout.
 - Add Russian support, thanks to Korneev.
 - Upgrade to Connect IQ SDK 3.1.6.
-
-v.1.18 - 2017-12-02
-
-- Add Italian support, thanks to Raghnor.
-- Add support for Descent™ Mk1.
-- Add temperature for devices with internal sensor.
-- Add a progress dialog on activity save.
-- Fix font size on vívoactive® 3.
 
 Full history at https://bitbucket.org/obagot/connectiq-hict/src/master/README.md

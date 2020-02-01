@@ -59,9 +59,11 @@ Available languages:
 - English,
 - French,
 - German,
+- Italian,
 - Polish,
 - Russian,
-- Spanish.
+- Spanish,
+- Swedish.
 
 Supported models:
 
@@ -84,10 +86,11 @@ When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remembe
 
 ## History ##
 
-### v.1.21 - 2020-01-xx ###
+### v.1.21 - 2020-02-01 ###
 
 - New options menu format for modern watches (Connect IQ 3+).
 - Fix "workou" session name.
+- Upgrade to Connect IQ SDK 3.1.7.
 
 ### v.1.20 - 2020-01-10 ###
 

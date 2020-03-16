@@ -251,7 +251,8 @@ class HictView extends Ui.View {
             periodTime++;
 
             if (resting) {
-                if (periodTime >= restDelay) {
+                var delay = exerciseCount < 1 ? startDelay : restDelay;
+                if (periodTime >= delay) {
                     // Next exercise
                     switchToWorkout();
                 }
@@ -446,7 +447,8 @@ class HictView extends Ui.View {
 
     hidden function drawTimerLabel(view) {
         if (running) {
-            var t = (resting ? restDelay : exerciseDelay) - periodTime - 1;
+            var delay = exerciseCount < 1 ? startDelay : restDelay;
+            var t = (resting ? delay : exerciseDelay) - periodTime - 1;
             view.setText(to2digitFormat(t));
         } else {
             view.setText(Ui.loadResource(Rez.Strings.no_value));
@@ -644,6 +646,8 @@ class HictView extends Ui.View {
     hidden var exerciseDelay = 30;
     // Pause delay
     hidden var restDelay = 10;
+    // Start delay
+    hidden const startDelay = 5;
     // Notification policy
     hidden var notificationPolicy = Prefs.POLICY_EVERY_10;
     // Allow vibration

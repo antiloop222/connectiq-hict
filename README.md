@@ -55,6 +55,7 @@ Install from Garmin's [Connect IQ Store](https://apps.garmin.com/en-US/apps/65a4
 Please submit questions, issues and enhancement requests on this project's [issue tracker](https://bitbucket.org/obagot/connectiq-hict/issues).
 
 Available languages:
+
 - Danish (partly),
 - English,
 - French,
@@ -85,6 +86,10 @@ Source code is made available under the [MIT license](https://opensource.org/lic
 When [forking](https://bitbucket.org/obagot/connectiq-hict/fork), please remember to change the application ID in *manifest.xml*, to prevent issues between both applications on the watch.
 
 ## History ##
+
+### v.1.22 - 2020-03-xx ###
+
+- Change start delay to 5 seconds, instead of same value as rest delay.
 
 ### v.1.21 - 2020-02-01 ###
 

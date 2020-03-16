@@ -1,3 +1,7 @@
+v.1.22 - 2020-03-xx
+
+- Délai de démarrage réglé sur 5 secondes, au lieu de la valeur du temps de repos.
+
 v.1.21 - 2020-02-01
 
 - Nouveau format du menu de configuration pour les montres plus récentes (Connect IQ 3+).

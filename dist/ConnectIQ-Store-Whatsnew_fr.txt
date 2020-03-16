@@ -20,4 +20,4 @@ v.1.19 - 2019-11-29
 - Ajout du russe, merci à Korneev.
 - Mise-à-jour Connect IQ SDK 3.1.6.
 
-Historique complet ici : https://bitbucket.org/obagot/connectiq-hict/src/master/README.md
+Historique complet ici : https://bitbucket.org/obagot/connectiq-hict/src/master/README.md#markdown-header-history
